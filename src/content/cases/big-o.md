@@ -37,10 +37,22 @@ samples:
     alt: Big O Solutions Facebook reels with view counts
     caption: Facebook reels
     wide: true
-  - src: ../../assets/cases/big-o/bigo-instagram-reels-views-1.png
-    alt: Big O Solutions Instagram reels grid with view counts
-    caption: Instagram reels
-    wide: true
+  - src: ../../assets/cases/big-o/bigo-reel-budget-objection.jpg
+    alt: Big O Solutions talking-head reel about starting data analysis on a tight budget
+    caption: Reel on the budget objection. 56 reactions, 22 comments.
+    arabic: true
+  - src: ../../assets/cases/big-o/bigo-post-tools-to-dataset.jpg
+    alt: Big O Solutions post asking learners who know Excel, Python and Power BI why they still can't analyze a dataset
+    caption: "Angle: you learned the tools, but can you analyze a dataset?"
+    arabic: true
+  - src: ../../assets/cases/big-o/bigo-post-data-analyst.jpg
+    alt: Big O Solutions post explaining what a data analyst really does, from numbers to a clear decision
+    caption: "Angle: from a lot of numbers to one clear decision"
+    arabic: true
+  - src: ../../assets/cases/big-o/bigo-post-python-programmer.jpg
+    alt: Big O Solutions post asking if learning Python makes you a programmer
+    caption: "Angle: learning Python syntax is not the same as solving problems. 26 reactions, 20 comments."
+    arabic: true
   - src: ../../assets/cases/big-o/bigo-ads.png
     alt: Meta Ads Manager table for Big O Solutions, campaign names blurred
     caption: Meta campaigns. Campaign names and spend are hidden.
