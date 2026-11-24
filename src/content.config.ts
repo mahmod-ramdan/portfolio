@@ -48,6 +48,7 @@ const cases = defineCollection({
             caption: z.string(),
             arabic: z.boolean().optional(),
             wide: z.boolean().optional(),
+            tall: z.boolean().optional(),
           }),
         )
         .default([]),

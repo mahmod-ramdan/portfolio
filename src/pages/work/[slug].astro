@@ -140,9 +140,9 @@ const Company = d.companyUrl ? 'a' : 'span';
           {d.samplesIntro && <p class="samples__intro" data-reveal>{d.samplesIntro}</p>}
           <ul class="samples__grid" data-reveal-group>
             {d.samples.map((s) => (
-              <li class:list={['sample', { 'sample--wide': s.wide }]} data-reveal>
+              <li class:list={['sample', { 'sample--wide': s.wide, 'sample--tall': s.tall }]} data-reveal>
                 <button class="sample__btn" type="button" data-zoom aria-label={`Enlarge: ${s.caption}`}>
-                  <Image src={s.src} alt={s.alt} widths={[640, 1200, 1800]} sizes={s.wide ? '(max-width: 860px) 100vw, 1200px' : '(max-width: 860px) 100vw, 600px'} />
+                  <Image src={s.src} alt={s.alt} widths={[640, 1200, 1800]} sizes={s.wide ? '(max-width: 860px) 100vw, 1200px' : s.tall ? '(max-width: 860px) 50vw, 300px' : '(max-width: 860px) 100vw, 600px'} />
                 </button>
                 <p class="sample__cap">
                   {s.caption}
@@ -259,8 +259,10 @@ const Company = d.companyUrl ? 'a' : 'span';
   .note { margin: 0; font-size: 15px; color: var(--text-muted); padding: 16px 20px; border: 1.5px dashed var(--line-strong); border-radius: 12px; justify-self: start; }
 
   .samples__intro { font-size: clamp(17px, 1.3vw, 19px); margin: 10px 0 24px; max-width: 60ch; }
-  .samples__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: 20px; align-items: start; }
+  .samples__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: 20px; align-items: start; }
+  .sample { grid-column: span 2; }
   .sample--wide { grid-column: 1 / -1; }
+  .sample--tall { grid-column: span 1; }
   .sample__btn {
     display: block; width: 100%;
     border-radius: var(--radius); overflow: hidden;
@@ -299,7 +301,8 @@ const Company = d.companyUrl ? 'a' : 'span';
 
   @media (max-width: 860px) {
     .block { grid-template-columns: 1fr; gap: 12px; }
-    .samples__grid { grid-template-columns: 1fr; }
+    .samples__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sample--tall .sample__cap { font-size: 13px; }
     .flow { grid-template-columns: 1fr; }
     .zoom__close { top: 8px; right: 8px; }
   }
