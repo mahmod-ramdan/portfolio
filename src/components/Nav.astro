@@ -1,0 +1,96 @@
+---
+import { person } from '../data/site';
+import { u } from '../data/url';
+const showCv = person.cv.ready || import.meta.env.DEV;
+const links = [
+  { href: u('work'), label: 'Work' },
+  { href: u('#how'), label: 'How I work' },
+  { href: u('#experience'), label: 'Experience' },
+  { href: u('#contact'), label: 'Contact' },
+];
+---
+<header class="nav" data-nav transition:persist="nav">
+  <div class="nav__bar wrap">
+    <a href={u('')} class="nav__home" aria-label={`${person.name}, home`}>
+      <span class="display">MR</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav__links">
+        {links.map((l) => <li><a class="link" href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="nav__end">
+      {showCv && <a class="btn btn--primary nav__cv" href={u(person.cv.file)} download>Download CV</a>}
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle>
+        <span class="sr">Menu</span>
+        <span class="nav__burger" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="menu" id="menu" data-menu hidden>
+    <ul class="menu__links wrap">
+      {[{ href: u(''), label: 'Home' }, ...links].map((l) => (
+        <li class="line"><a class="display" href={l.href} data-menu-link><span>{l.label}</span></a></li>
+      ))}
+    </ul>
+    <div class="menu__foot wrap">
+      <a class="link" href={`mailto:${person.email}`}>{person.email}</a>
+      {showCv && <a class="btn btn--primary" href={u(person.cv.file)} download>Download CV</a>}
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav { position: fixed; inset: 0 0 auto 0; z-index: 50; }
+  .nav__bar {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    height: 76px;
+    transition: height 400ms var(--ease-out);
+  }
+  .nav::before {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: rgba(10, 10, 11, 0.72);
+    backdrop-filter: blur(14px) saturate(1.2);
+    -webkit-backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid var(--line);
+    opacity: 0; transition: opacity 400ms var(--ease-out);
+  }
+  :global(.nav.is-scrolled)::before { opacity: 1; }
+  :global(.nav.is-scrolled) .nav__bar { height: 64px; }
+  :global(.nav.is-hidden) { transform: translateY(-100%); }
+  .nav { transition: transform 500ms var(--ease-out); }
+
+  .nav__home { font-size: 28px; line-height: 1; letter-spacing: 0.01em; }
+  .nav__home .display { display: inline-block; transition: color var(--dur-fast); }
+  .nav__home:hover .display { color: var(--accent); }
+  .nav__links { display: flex; gap: clamp(20px, 3vw, 40px); font-size: 15px; font-weight: 400; }
+  .nav__end { display: flex; align-items: center; gap: 12px; }
+  .nav__cv { padding: 11px 20px; font-size: 14px; }
+
+  .nav__toggle { display: none; width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid var(--line-strong); }
+  .nav__burger { position: relative; display: block; width: 18px; height: 10px; margin: auto; }
+  .nav__burger i { position: absolute; left: 0; right: 0; height: 1.5px; background: var(--text); transition: transform 400ms var(--ease-out), top 400ms var(--ease-out); }
+  .nav__burger i:first-child { top: 0; }
+  .nav__burger i:last-child { top: 8.5px; }
+  :global([aria-expanded='true']) .nav__burger i:first-child { top: 4.25px; transform: rotate(45deg); }
+  :global([aria-expanded='true']) .nav__burger i:last-child { top: 4.25px; transform: rotate(-45deg); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+  .menu {
+    position: fixed; inset: 0; z-index: -2;
+    background: var(--bg);
+    display: flex; flex-direction: column; justify-content: center; gap: 48px;
+    padding-top: 76px;
+  }
+  .menu[hidden] { display: none; }
+  .menu__links { display: grid; gap: 4px; }
+  .menu__links a { display: block; font-size: clamp(56px, 15vw, 96px); line-height: 1; }
+  .menu__links a:hover, .menu__links a:focus-visible { color: var(--accent); }
+  .menu__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 15px; }
+
+  @media (max-width: 860px) {
+    .nav nav, .nav__cv { display: none; }
+    .nav__toggle { display: grid; place-items: center; }
+  }
+</style>

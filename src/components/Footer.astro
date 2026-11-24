@@ -1,0 +1,19 @@
+---
+import { person } from '../data/site';
+const year = new Date().getFullYear();
+---
+<footer class="foot wrap">
+  <p>© {year} {person.name}</p>
+  <p class="muted">{person.location}</p>
+</footer>
+
+<style>
+  .foot {
+    display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    padding-block: 40px 48px;
+    margin-top: var(--section);
+    border-top: 1px solid var(--line);
+    font-size: var(--fs-small);
+  }
+  .foot p { margin: 0; }
+</style>

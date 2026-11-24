@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Proof from '../components/Proof.astro';
+import Giant from '../components/Giant.astro';
+import WorkList from '../components/WorkList.astro';
+import HowIWork from '../components/HowIWork.astro';
+import Experience from '../components/Experience.astro';
+import About from '../components/About.astro';
+import Brands from '../components/Brands.astro';
+import Contact from '../components/Contact.astro';
+import Todo from '../components/Todo.astro';
+import { siteTodos } from '../data/site';
+import { u } from '../data/url';
+
+const featured = (await getCollection('cases', (c) => c.data.tier === 'featured')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base>
+  <Hero />
+  <Proof />
+
+  <section class="section wrap" id="work" aria-labelledby="work-title">
+    <Giant lines={['Selected', 'work']} id="work-title" />
+    <WorkList items={featured} />
+    <p class="more" data-reveal><a class="btn" href={u('work')}>See all work</a></p>
+  </section>
+
+  <HowIWork />
+  <Experience />
+  <About />
+  <Brands />
+  <Contact />
+  <Todo items={siteTodos} title="Site-wide TODO (only visible in dev)" />
+</Base>
+
+<style>
+  .more { margin-top: 40px; }
+</style>

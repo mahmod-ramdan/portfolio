@@ -1,0 +1,40 @@
+---
+import { stages, type StageId } from '../data/site';
+interface Props { lit?: StageId[]; all?: boolean; size?: 'sm' | 'md'; label?: string; quiet?: boolean }
+const { lit = [], all = false, size = 'md', label = 'Stages of the marketing cycle used here', quiet = false } = Astro.props;
+---
+{quiet ? (
+  <ul class:list={['stages', `stages--${size}`]} aria-label={label}>
+    {stages.filter((s) => lit.includes(s.id)).map((s) => <li class="stage">{s.short}</li>)}
+  </ul>
+) : (
+<ul class:list={['stages', `stages--${size}`]} data-stages aria-label={label}>
+  {stages.map((s) => {
+    const on = all || lit.includes(s.id);
+    return (
+      <li class:list={['stage', { 'is-lit': on }]}>
+        <span class="stage__fill" aria-hidden="true"></span>
+        <span class="stage__label">{s.name}</span>
+        {!on && <span class="sr"> (not part of this project)</span>}
+      </li>
+    );
+  })}
+</ul>
+)}
+
+<style>
+  .stages { display: flex; flex-wrap: wrap; gap: 8px; }
+  .stage {
+    position: relative; overflow: hidden; isolation: isolate;
+    border: 1.5px solid var(--line); border-radius: 999px;
+    padding: 7px 14px; font-size: 13px; font-weight: 500; line-height: 1.2;
+    color: var(--text-muted); white-space: nowrap;
+  }
+  .stages--sm .stage { padding: 5px 11px; font-size: 12px; }
+  .stage.is-lit { border-color: var(--accent); color: var(--accent-ink); }
+  .stage__fill { position: absolute; inset: 0; z-index: -1; background: var(--accent); }
+  .stage:not(.is-lit) .stage__fill { display: none; }
+  :global(html.js-motion) .stage.is-lit .stage__fill { transform: scaleX(0); }
+  :global(html.js-motion) .stage.is-lit .stage__label { color: var(--text); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>

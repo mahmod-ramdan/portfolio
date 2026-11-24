@@ -1,0 +1,306 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Stages from '../../components/Stages.astro';
+import Results from '../../components/Results.astro';
+import Todo from '../../components/Todo.astro';
+import { brands } from '../../data/site';
+import { u } from '../../data/url';
+
+export async function getStaticPaths() {
+  const all = (await getCollection('cases')).sort((a, b) => a.data.order - b.data.order);
+  return all.map((entry, i) => ({ params: { slug: entry.id }, props: { entry, next: all[(i + 1) % all.length] } }));
+}
+interface Props { entry: CollectionEntry<'cases'>; next: CollectionEntry<'cases'> }
+const { entry, next } = Astro.props;
+const d = entry.data;
+const featured = d.tier === 'featured';
+const clientLogos = brands.filter((b) => d.clientLogos.includes(b.name));
+const Company = d.companyUrl ? 'a' : 'span';
+---
+<Base title={`${d.company} | Mahmoud Ramadan`} description={d.headline} progress>
+  <article class="case">
+    <header class="case__head wrap">
+      <a class="case__back link" href={u('work')}>All work</a>
+      <div class="case__id">
+        {d.logo && (
+          <span class="case__logo"><Image src={d.logo} alt="" height={80} /></span>
+        )}
+        <div>
+          <Company
+            class="case__company display"
+            transition:name={`company-${entry.id}`}
+            {...(d.companyUrl ? { href: d.companyUrl, target: '_blank', rel: 'noopener' } : {})}
+          >
+            {d.company}
+            {d.companyUrl && (
+              <svg class="case__ext" viewBox="0 0 24 24" width="0.42em" height="0.42em" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" /></svg>
+            )}
+          </Company>
+          {d.partner && <p class="case__partner">{d.partner}</p>}
+        </div>
+      </div>
+      <ul class="case__pills">
+        <li class="pill">{d.role}</li>
+        {d.roleNote && <li class="pill pill--muted">{d.roleNote}</li>}
+        <li class="pill pill--muted">{d.type}</li>
+        {d.dates && <li class="pill pill--muted">{d.dates}</li>}
+        {d.industry.map((i) => <li class="pill pill--muted">{i}</li>)}
+      </ul>
+      <h1 class="case__headline display" data-reveal-lines>
+        <span class="line"><span>{d.headline}</span></span>
+      </h1>
+      <div class="case__stages" data-reveal><Stages lit={d.stages} /></div>
+    </header>
+
+    <div class="case__body wrap">
+      {d.context && (
+        <section class="block" data-reveal>
+          <h2 class="block__label">Context</h2>
+          <div class="block__main"><p class="lead">{d.context}</p></div>
+        </section>
+      )}
+      {d.challenge && (
+        <section class="block" data-reveal>
+          <h2 class="block__label">Challenge</h2>
+          <div class="block__main"><p class="lead">{d.challenge}</p></div>
+        </section>
+      )}
+      {d.insight && (
+        <section class="insight" data-reveal>
+          <h2 class="insight__label">Key insight</h2>
+          <p class="insight__text">{d.insight}</p>
+        </section>
+      )}
+      {d.story.length > 0 && (
+        <section class="block">
+          <h2 class="block__label" data-reveal>The story</h2>
+          <ol class="block__main story" data-reveal-group>
+            {d.story.map((s) => <li data-reveal>{s}</li>)}
+          </ol>
+        </section>
+      )}
+      {d.did.length > 0 && (
+        <section class="block">
+          <h2 class="block__label" data-reveal>What I did</h2>
+          <ul class="block__main did" data-reveal-group>
+            {d.did.map((s) => <li data-reveal>{s}</li>)}
+          </ul>
+        </section>
+      )}
+      {d.quotes.length > 0 && (
+        <section class="block">
+          <h2 class="block__label" data-reveal>Angles that worked</h2>
+          <ul class="block__main quotes" data-reveal-group>
+            {d.quotes.map((q) => (
+              <li class="quote" data-reveal>
+                <span class="quote__label">{q.label}</span>
+                <span class="quote__text">“{q.text}”</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {d.howIWork.length > 0 && (
+        <section class="block">
+          <h2 class="block__label" data-reveal>How I work</h2>
+          <ol class="block__main flow" data-reveal-group>
+            {d.howIWork.map((s) => (
+              <li data-reveal><span class="flow__step">{s.step}</span><span class="flow__text">{s.text}</span></li>
+            ))}
+          </ol>
+        </section>
+      )}
+      {d.results.length > 0 && (
+        <section class="block block--wide">
+          <h2 class="block__label" data-reveal>Results</h2>
+          <div class="block__main"><Results items={d.results} /></div>
+        </section>
+      )}
+      {clientLogos.length > 0 && (
+        <section class="block">
+          <h2 class="block__label" data-reveal>Some of the clients</h2>
+          <ul class="block__main logos" data-reveal-group>
+            {clientLogos.map((b) => (
+              <li data-reveal>
+                {b.href
+                  ? <a href={b.href} target="_blank" rel="noopener" title={b.name}><Image src={b.logo} alt={b.name} height={96} /></a>
+                  : <Image src={b.logo} alt={b.name} height={96} />}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      {d.note && <p class="note" data-reveal>{d.note}</p>}
+
+      {d.samples.length > 0 && (
+        <section class="samples">
+          <h2 class="block__label" data-reveal>Work samples</h2>
+          {d.samplesIntro && <p class="samples__intro" data-reveal>{d.samplesIntro}</p>}
+          <ul class="samples__grid" data-reveal-group>
+            {d.samples.map((s) => (
+              <li class:list={['sample', { 'sample--wide': s.wide }]} data-reveal>
+                <button class="sample__btn" type="button" data-zoom aria-label={`Enlarge: ${s.caption}`}>
+                  <Image src={s.src} alt={s.alt} widths={[640, 1200, 1800]} sizes={s.wide ? '(max-width: 860px) 100vw, 1200px' : '(max-width: 860px) 100vw, 600px'} />
+                </button>
+                <p class="sample__cap">
+                  {s.caption}
+                  {s.arabic && <span class="pill pill--muted sample__ar">Arabic content</span>}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {featured && d.learned && (
+        <section class="learned" data-reveal>
+          <h2 class="block__label">What I learned</h2>
+          <p class="learned__text">{d.learned}</p>
+        </section>
+      )}
+      {d.closing && <p class="closing" data-reveal>{d.closing}</p>}
+    </div>
+
+    <Todo items={d.todos} />
+
+    <a class="next wrap" href={u(`work/${next.id}`)}>
+      <span class="next__label">Next case</span>
+      <span class="next__name display">{next.data.company}</span>
+    </a>
+  </article>
+
+  <dialog class="zoom" data-zoom-dialog aria-label="Enlarged image">
+    <button class="zoom__close" type="button" data-zoom-close aria-label="Close">×</button>
+    <img alt="" data-zoom-img />
+  </dialog>
+</Base>
+
+<script>
+  function bindZoom() {
+    const dlg = document.querySelector<HTMLDialogElement>('[data-zoom-dialog]');
+    const img = document.querySelector<HTMLImageElement>('[data-zoom-img]');
+    if (!dlg || !img) return;
+    document.querySelectorAll<HTMLButtonElement>('[data-zoom]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const src = btn.querySelector('img');
+        if (!src) return;
+        img.src = src.currentSrc || src.src;
+        img.alt = src.alt;
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', (e) => { if (e.target === dlg || (e.target as HTMLElement).closest('[data-zoom-close]')) dlg.close(); });
+  }
+  document.addEventListener('astro:page-load', bindZoom);
+</script>
+
+<style>
+  .case__head { padding-top: clamp(120px, 14vw, 180px); }
+  .case__back { display: inline-block; font-size: 14px; color: var(--text-muted); margin-bottom: clamp(32px, 5vw, 56px); }
+  .case__id { display: flex; align-items: center; gap: clamp(16px, 2vw, 28px); margin-bottom: 20px; }
+  .case__logo {
+    flex: none; display: grid; place-items: center;
+    width: clamp(64px, 7vw, 92px); aspect-ratio: 1;
+    border-radius: 20px; background: var(--bg-elev); border: 1px solid var(--line);
+    padding: 12px;
+  }
+  .case__logo :global(img) { max-height: 100%; width: auto; object-fit: contain; }
+  .case__company { display: inline-flex; align-items: flex-start; gap: 0.12em; font-size: clamp(36px, 4.6vw, 64px); line-height: 0.95; }
+  a.case__company:hover { color: var(--accent); }
+  .case__ext { margin-top: 0.08em; }
+  .case__partner { margin: 8px 0 0; font-size: 14px; color: var(--text-muted); max-width: 60ch; }
+  .case__pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(36px, 5vw, 56px); }
+  .case__headline { font-size: clamp(40px, 5.8vw, 92px); line-height: 0.94; max-width: 15ch; margin-bottom: clamp(28px, 4vw, 44px); text-wrap: balance; }
+  .case__headline .line { padding-bottom: 0.05em; }
+  .case__stages { padding-bottom: clamp(48px, 7vw, 96px); border-bottom: 1px solid var(--line); }
+
+  .case__body { display: grid; gap: clamp(48px, 7vw, 96px); padding-top: clamp(48px, 7vw, 96px); }
+  .block { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: clamp(16px, 3vw, 48px); }
+  .block__label { font-size: 15px; font-weight: 500; color: var(--text-muted); padding-top: 6px; }
+  .block__main { min-width: 0; }
+  .lead { font-size: clamp(20px, 1.9vw, 27px); line-height: 1.5; margin: 0; max-width: 40ch; }
+
+  .insight {
+    position: relative;
+    padding: clamp(28px, 4vw, 56px);
+    border-radius: 24px;
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .insight::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--accent); }
+  .insight__label { font-size: 15px; font-weight: 500; color: var(--accent); margin-bottom: 16px; }
+  .insight__text { font-size: clamp(24px, 2.8vw, 40px); line-height: 1.3; font-weight: 400; letter-spacing: -0.015em; margin: 0; max-width: 32ch; }
+
+  .did, .story { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+  .did li, .story li { position: relative; padding: 16px 0 16px 34px; border-bottom: 1px solid var(--line); font-size: clamp(17px, 1.3vw, 19px); line-height: 1.55; }
+  .did li:first-child, .story li:first-child { border-top: 1px solid var(--line); }
+  .did li::before { content: ''; position: absolute; left: 0; top: 30px; width: 18px; height: 1.5px; background: var(--accent); }
+  .story { counter-reset: s; }
+  .story li { counter-increment: s; }
+  .story li::before { content: counter(s, decimal-leading-zero); position: absolute; left: 0; top: 17px; font-family: var(--font-display); color: var(--accent); font-size: 16px; }
+
+  .quotes { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+  .quote { display: grid; gap: 10px; padding: clamp(20px, 2.4vw, 30px); border-radius: var(--radius); border: 1px solid var(--line); }
+  .quote__label { font-size: 14px; color: var(--text-muted); }
+  .quote__text { font-size: clamp(20px, 2vw, 28px); line-height: 1.35; font-weight: 400; letter-spacing: -0.01em; }
+
+  .flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; counter-reset: f; }
+  .flow li { counter-increment: f; display: grid; gap: 8px; padding: 22px; border-radius: var(--radius); background: var(--bg-elev); border: 1px solid var(--line); }
+  .flow__step::before { content: counter(f) '. '; color: var(--accent); }
+  .flow__step { font-family: var(--font-display); text-transform: uppercase; font-size: 24px; line-height: 1; }
+  .flow__text { font-size: 15px; color: var(--text-muted); line-height: 1.5; }
+
+  .logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+  .logos li { display: grid; place-items: center; height: 104px; padding: 18px 28px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg-elev); }
+  .logos :global(img) { height: 56px; width: auto; }
+  .note { margin: 0; font-size: 15px; color: var(--text-muted); padding: 16px 20px; border: 1.5px dashed var(--line-strong); border-radius: 12px; justify-self: start; }
+
+  .samples__intro { font-size: clamp(17px, 1.3vw, 19px); margin: 10px 0 24px; max-width: 60ch; }
+  .samples__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); margin-top: 20px; align-items: start; }
+  .sample--wide { grid-column: 1 / -1; }
+  .sample__btn {
+    display: block; width: 100%;
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--line); background: var(--bg-elev);
+    cursor: zoom-in;
+  }
+  .sample__btn :global(img) { width: 100%; height: auto; transition: transform 900ms var(--ease-out); }
+  @media (hover: hover) { .sample__btn:hover :global(img) { transform: scale(1.02); } }
+  .sample__cap { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 14px 0 0; font-size: 15px; color: var(--text-muted); }
+  .sample__ar { font-size: 12px; padding: 4px 10px; }
+
+  .learned { padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--line); }
+  .learned__text { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(34px, 4.4vw, 68px); line-height: 0.98; margin: 16px 0 0; max-width: 20ch; }
+  .closing { font-size: clamp(18px, 1.5vw, 22px); margin: 0; }
+
+  .next {
+    display: grid; gap: 12px;
+    margin-top: var(--section);
+    padding-top: clamp(40px, 5vw, 64px);
+    border-top: 1px solid var(--line);
+  }
+  .next__label { font-size: 15px; color: var(--text-muted); }
+  .next__name { font-size: clamp(56px, 11vw, 180px); line-height: 0.88; transition: color 400ms var(--ease-out), transform 700ms var(--ease-out); transform-origin: 0 50%; }
+  .next:hover .next__name { color: var(--accent); transform: translateX(16px); }
+
+  .zoom { padding: 0; border: 0; background: transparent; max-width: 96vw; max-height: 94vh; overflow: visible; }
+  .zoom::backdrop { background: rgba(5, 5, 6, 0.88); backdrop-filter: blur(6px); }
+  .zoom[open] { animation: zoomIn 450ms var(--ease-out); }
+  .zoom img { max-width: 96vw; max-height: 90vh; width: auto; height: auto; border-radius: 12px; }
+  .zoom__close {
+    position: absolute; top: -14px; right: -14px; z-index: 2;
+    width: 44px; height: 44px; border-radius: 999px;
+    background: var(--text); color: var(--bg); font-size: 26px; line-height: 1;
+  }
+  @keyframes zoomIn { from { opacity: 0; transform: scale(0.96); } }
+
+  @media (max-width: 860px) {
+    .block { grid-template-columns: 1fr; gap: 12px; }
+    .samples__grid { grid-template-columns: 1fr; }
+    .flow { grid-template-columns: 1fr; }
+    .zoom__close { top: 8px; right: 8px; }
+  }
+</style>

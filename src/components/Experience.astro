@@ -1,0 +1,76 @@
+---
+import Giant from './Giant.astro';
+import { timeline, person, type TimelineItem } from '../data/site';
+import { u } from '../data/url';
+const tracks: { title: string; items: TimelineItem[] }[] = [
+  { title: 'Full-time', items: timeline.fullTime },
+  { title: 'Freelance & part-time', items: timeline.side },
+];
+---
+<section class="section exp wrap" id="experience" aria-labelledby="exp-title">
+  <Giant lines={['Experience']} id="exp-title" />
+  <div class="exp__tracks">
+    {tracks.map((t) => (
+      <div class="exp__track">
+        <h3 class="exp__title" data-reveal>{t.title}</h3>
+        <div class="exp__list">
+          <span class="exp__line" aria-hidden="true"><span data-draw></span></span>
+          <ol data-reveal-group>
+            {t.items.map((it) => {
+              const quiet = !it.company;
+              const Tag = it.href ? 'a' : 'div';
+              return (
+                <li class:list={['exp__item', { 'is-quiet': quiet }]} data-reveal>
+                  <Tag class="exp__card" {...(it.href ? { href: u(it.href) } : {})}>
+                    <span class="exp__dates">{it.dates}</span>
+                    <span class="exp__role">{it.role}</span>
+                    {it.company && <span class="exp__company">{it.company}</span>}
+                    {it.note && <span class="exp__note">{it.note}</span>}
+                    {it.type && <span class="pill pill--muted exp__type">{it.type}</span>}
+                  </Tag>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
+      </div>
+    ))}
+  </div>
+  <p class="exp__edu" data-reveal>{person.education}</p>
+</section>
+
+<style>
+  .exp__tracks { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); }
+  .exp__title { font-size: 15px; font-weight: 500; color: var(--text-muted); margin-bottom: 24px; }
+  .exp__list { position: relative; }
+  .exp__line { position: absolute; left: 5px; top: 10px; bottom: 10px; width: 1.5px; background: var(--line); }
+  .exp__line span { position: absolute; inset: 0; background: var(--accent); transform-origin: 50% 0; }
+  :global(html:not(.js-motion)) .exp__line span { display: none; }
+  .exp__list ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .exp__item { position: relative; padding-left: 32px; }
+  .exp__item::before {
+    content: ''; position: absolute; left: 0; top: 20px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 1.5px solid var(--accent);
+  }
+  .exp__item.is-quiet::before { border-color: var(--line-strong); }
+  .exp__card {
+    display: grid; gap: 4px;
+    padding: 12px 16px 16px; margin-left: -16px;
+    border-radius: 12px;
+    transition: background-color 400ms var(--ease-out);
+  }
+  a.exp__card:hover { background: rgba(255, 255, 255, 0.035); }
+  a.exp__card:hover .exp__company { color: var(--accent); }
+  .exp__dates { font-size: 13px; color: var(--text-muted); }
+  .exp__role { font-weight: 500; line-height: 1.4; }
+  .exp__company { transition: color var(--dur-fast); }
+  .exp__note { font-size: 14px; color: var(--text-muted); }
+  .exp__type { justify-self: start; margin-top: 6px; font-size: 12px; padding: 4px 10px; }
+  .is-quiet .exp__role { color: var(--text-muted); font-weight: 400; }
+  .exp__edu { margin-top: clamp(40px, 5vw, 64px); padding-top: 24px; border-top: 1px solid var(--line); font-size: 15px; color: var(--text-muted); }
+
+  @media (max-width: 860px) {
+    .exp__tracks { grid-template-columns: 1fr; }
+  }
+</style>

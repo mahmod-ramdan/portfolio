@@ -1,0 +1,11 @@
+---
+interface Props { items: string[]; title?: string }
+const { items, title = 'TODO for Mahmoud (only visible in dev)' } = Astro.props;
+const show = import.meta.env.DEV && items.length > 0;
+---
+{show && (
+  <aside class="todo wrap" aria-label="Open items">
+    <strong>{title}</strong>
+    <ul>{items.map((t) => <li>• {t}</li>)}</ul>
+  </aside>
+)}

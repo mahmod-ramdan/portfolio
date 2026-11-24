@@ -1,0 +1,57 @@
+---
+import { proof } from '../data/site';
+import { u } from '../data/url';
+---
+<section class="proof wrap" aria-label="Results at a glance">
+  <ul class="proof__list" data-reveal-group>
+    {proof.map((p) => (
+      <li data-reveal>
+        <a class="proof__item" href={u(p.href)}>
+          <span class="proof__num num">
+            {p.prefix && <span class="proof__fix">{p.prefix}</span>}
+            <span data-count={p.to} data-decimals={p.decimals}>{p.to.toLocaleString('en-US', { minimumFractionDigits: p.decimals })}</span>
+            {p.suffix && <span class="proof__fix">{p.suffix}</span>}
+          </span>
+          <span class="proof__label">{p.label}</span>
+          <span class="proof__src">{p.source}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .proof { margin-top: clamp(48px, 7vw, 96px); }
+  .proof__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .proof__list > li + li { border-left: 1px solid var(--line); }
+  .proof__item {
+    display: flex; flex-direction: column; gap: 10px;
+    height: 100%;
+    padding: clamp(22px, 2.6vw, 36px) clamp(14px, 1.6vw, 24px);
+    transition: background-color 400ms var(--ease-out);
+  }
+  .proof__item:hover { background: rgba(255, 255, 255, 0.025); }
+  .proof__num {
+    font-size: clamp(40px, 4.4vw, 64px);
+    line-height: 0.95;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .proof__fix { font-size: 0.62em; }
+  .proof__label { font-size: 15px; line-height: 1.4; }
+  .proof__src { margin-top: auto; font-size: 13px; color: var(--text-muted); transition: color var(--dur-fast); }
+  .proof__item:hover .proof__src { color: var(--text); }
+
+  @media (max-width: 1060px) {
+    .proof__list { grid-template-columns: repeat(2, 1fr); }
+    .proof__list > li { border-left: 0 !important; border-top: 1px solid var(--line); }
+    .proof__list > li:nth-child(odd):not(:last-child) { border-right: 1px solid var(--line); }
+    .proof__list > li:nth-child(-n + 2) { border-top: 0; }
+    .proof__list > li:last-child { grid-column: 1 / -1; }
+  }
+</style>

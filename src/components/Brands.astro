@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import { brands } from '../data/site';
+const loop = [...brands, ...brands];
+---
+<section class="section brands" aria-labelledby="brands-title">
+  <h2 class="brands__title wrap" id="brands-title" data-reveal>Brands I've worked with</h2>
+  <div class="brands__viewport" data-reveal>
+    <ul class="brands__track">
+      {loop.map((b, i) => {
+        const dup = i >= brands.length;
+        const img = <Image src={b.logo} alt={dup ? '' : b.name} height={96} class:list={['brands__logo', { 'brands__logo--shape': (b as any).keepShape }]} />;
+        return (
+          <li aria-hidden={dup ? 'true' : undefined}>
+            {b.href
+              ? <a href={b.href} target="_blank" rel="noopener" tabindex={dup ? -1 : undefined} title={b.name}>{img}</a>
+              : <span title={b.name}>{img}</span>}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .brands__title { font-size: 15px; font-weight: 500; color: var(--text-muted); margin-bottom: 32px; }
+  .brands__viewport {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+  .brands__track {
+    display: flex; align-items: center; gap: clamp(48px, 6vw, 96px);
+    width: max-content;
+    padding-inline: clamp(24px, 3vw, 48px);
+    animation: marquee 46s linear infinite;
+  }
+  .brands__viewport:hover .brands__track { animation-play-state: paused; }
+  .brands__track li a, .brands__track li span { display: block; }
+  :global(.brands__logo) {
+    height: clamp(36px, 4vw, 52px); width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.5;
+    transition: filter 500ms var(--ease-out), opacity 500ms var(--ease-out);
+  }
+  :global(.brands__logo--shape) { filter: grayscale(1) brightness(1.1); }
+  .brands__track li a:hover :global(.brands__logo),
+  .brands__track li span:hover :global(.brands__logo) { filter: none; opacity: 1; }
+  @keyframes marquee { to { transform: translateX(-50%); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brands__track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; row-gap: 32px; }
+    .brands__track li[aria-hidden='true'] { display: none; }
+  }
+</style>

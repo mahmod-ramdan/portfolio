@@ -1,0 +1,7 @@
+---
+interface Props { lines: string[]; as?: 'h1' | 'h2'; id?: string; class?: string }
+const { lines, as: Tag = 'h2', id, class: cls } = Astro.props;
+---
+<Tag class:list={['giant', cls]} id={id} data-reveal-lines>
+  {lines.map((l) => <span class="line"><span>{l}</span></span>)}
+</Tag>

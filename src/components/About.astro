@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/brand/portrait-4x5.jpg';
+import { person } from '../data/site';
+---
+<section class="section about wrap" id="about" aria-labelledby="about-title">
+  <div class="about__img" data-reveal>
+    <Image src={portrait} alt="Mahmoud Ramadan smiling, black and white portrait" widths={[400, 704]} sizes="(max-width: 860px) 60vw, 30vw" />
+  </div>
+  <div class="about__text" data-reveal-group>
+    <h2 class="about__title" id="about-title" data-reveal>About</h2>
+    {person.about.map((p) => <p data-reveal>{p}</p>)}
+  </div>
+</section>
+
+<style>
+  .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .about__img { border-radius: var(--radius); overflow: hidden; max-width: 440px; }
+  .about__img :global(img) { width: 100%; height: auto; filter: contrast(1.02); }
+  .about__title { font-size: 15px; font-weight: 500; color: var(--text-muted); margin-bottom: 20px; }
+  .about__text p { font-size: clamp(20px, 2vw, 28px); line-height: 1.45; font-weight: 300; max-width: 30ch; }
+  @media (max-width: 860px) {
+    .about { grid-template-columns: 1fr; }
+    .about__img { max-width: 320px; }
+  }
+</style>

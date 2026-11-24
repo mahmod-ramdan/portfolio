@@ -1,0 +1,64 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '@fontsource/anton/400.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { person } from '../data/site';
+import { u } from '../data/url';
+import { getImage } from 'astro:assets';
+import ogPortrait from '../assets/brand/portrait-square.jpg';
+
+interface Props {
+  title?: string;
+  description?: string;
+  progress?: boolean;
+}
+const {
+  title = `${person.name} | ${person.title}`,
+  description = `${person.heroLine} ${person.facts.join(', ')}.`,
+  progress = false,
+} = Astro.props;
+const og = await getImage({ src: ogPortrait, width: 704, format: 'jpg' });
+const ogUrl = new URL(og.src, Astro.site ?? 'https://example.com').toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href={u('favicon.svg')} />
+    <script is:inline data-astro-rerun>
+      document.documentElement.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-motion');
+      }
+    </script>
+    <ClientRouter fallback="animate" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    {progress && <div class="progress" aria-hidden="true" transition:persist="progress"></div>}
+    <Nav />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import { initMotion } from '../scripts/motion';
+      document.addEventListener('astro:page-load', () => initMotion());
+    </script>
+  </body>
+</html>

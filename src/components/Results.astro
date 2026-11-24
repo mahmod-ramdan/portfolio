@@ -1,0 +1,53 @@
+---
+interface R { value: string; label: string; note?: string; pending?: boolean }
+interface Props { items: R[] }
+const show = (r: R) => !r.pending || import.meta.env.DEV;
+const items = Astro.props.items.filter(show);
+
+// Split "EGP 1.2M+" into a static prefix, a countable number and a static suffix.
+// Values with arrows or ranges stay static.
+function parts(v: string) {
+  if (/→|–/.test(v)) return null;
+  const m = v.match(/^(\D*?)(\d[\d,]*(?:\.\d+)?)(.*)$/);
+  if (!m) return null;
+  const raw = m[2];
+  const to = parseFloat(raw.replace(/,/g, ''));
+  const decimals = raw.includes('.') ? raw.split('.')[1].length : 0;
+  return { pre: m[1], to, decimals, raw, post: m[3] };
+}
+---
+<ul class="results" data-reveal-group>
+  {items.map((r) => {
+    const p = parts(r.value);
+    return (
+      <li class="result" data-reveal>
+        <span class="result__value num">
+          {p ? (
+            <>
+              {p.pre && <span class="fix">{p.pre}</span>}
+              <span data-count={p.to} data-decimals={p.decimals}>{p.raw}</span>
+              {p.post && <span class="fix">{p.post}</span>}
+            </>
+          ) : r.value}
+        </span>
+        <span class="result__label">{r.label}</span>
+        {r.note && <span class="result__note">{r.note}</span>}
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .results { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .result {
+    display: flex; flex-direction: column; gap: 10px;
+    padding: clamp(22px, 2.4vw, 32px);
+    border-radius: var(--radius);
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+  }
+  .result__value { font-size: clamp(40px, 4.4vw, 64px); line-height: 0.95; color: var(--accent); }
+  .fix { font-size: 0.62em; }
+  .result__label { font-size: 16px; line-height: 1.45; font-weight: 400; }
+  .result__note { font-size: 14px; line-height: 1.5; color: var(--text-muted); }
+</style>

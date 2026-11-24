@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Giant from '../components/Giant.astro';
+import { u } from '../data/url';
+---
+<Base title="Page not found | Mahmoud Ramadan">
+  <section class="nf wrap">
+    <Giant lines={['Not', 'found']} as="h1" />
+    <p>This page doesn't exist. The work does.</p>
+    <a class="btn btn--primary" href={u('')}>Back to home</a>
+  </section>
+</Base>
+<style>
+  .nf { padding-top: clamp(140px, 16vw, 200px); min-height: 70vh; }
+  .nf p { font-size: clamp(18px, 1.6vw, 22px); margin-bottom: 28px; }
+</style>

@@ -1,0 +1,220 @@
+/* ───────────── Tokens ───────────── */
+:root {
+  --bg: #0a0a0b;
+  --bg-elev: #141518;
+  --surface: #1c1e22;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+  --text: #f2f2ef;
+  --text-muted: #9ea0a6;
+  --accent: #c8f04b;
+  --accent-ink: #0a0a0b;
+
+  --font-display: 'Anton', 'Impact', 'Arial Narrow', sans-serif;
+  --font-body: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --fs-mega: clamp(72px, 15vw, 240px);
+  --fs-h1: clamp(44px, 7vw, 104px);
+  --fs-h2: clamp(32px, 4.6vw, 60px);
+  --fs-h3: clamp(22px, 2.4vw, 30px);
+  --fs-body: clamp(16px, 1.15vw, 18px);
+  --fs-small: 14px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 200ms;
+  --dur-base: 650ms;
+  --dur-slow: 950ms;
+
+  --maxw: 1280px;
+  --gutter: clamp(16px, 3vw, 24px);
+  --section: clamp(96px, 12vw, 180px);
+  --radius: 16px;
+}
+
+/* ───────────── Base ───────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  font-weight: 300;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Soft light + film grain, like the old PDF portfolio */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 50vh at 12% 0%, rgba(255, 255, 255, 0.055), transparent 70%),
+    radial-gradient(50vw 50vh at 100% 100%, rgba(255, 255, 255, 0.03), transparent 70%);
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0 0 1em; }
+h1, h2, h3, h4 { margin: 0; font-weight: 400; }
+ul { margin: 0; padding: 0; list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; padding: 0; }
+
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip {
+  position: absolute; left: 16px; top: -60px; z-index: 200;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 10px 16px; border-radius: 999px; font-weight: 600;
+}
+.skip:focus { top: 16px; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
+.section { padding-block: var(--section) 0; }
+
+.display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+.mega { font-size: var(--fs-mega); }
+.h1 { font-size: var(--fs-h1); }
+.h2 { font-size: var(--fs-h2); }
+.h3 { font-size: var(--fs-h3); }
+.muted { color: var(--text-muted); }
+.num { font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+
+/* Big section titles that sit on the edge of the layout, like the PDF */
+.giant {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: var(--fs-mega);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  margin: 0 0 clamp(32px, 5vw, 64px);
+  margin-left: -0.04em;
+}
+
+/* Line-mask reveal wrapper (used by motion.ts) */
+.line { display: block; overflow: hidden; padding-block: 0.1em 0.06em; margin-block: -0.1em -0.06em; }
+.line > span { display: block; }
+
+/* ───────────── Pills ───────────── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--text);
+}
+.pill--muted { color: var(--text-muted); border-color: var(--line); }
+.pill--lit { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.pill--ar { font-family: var(--font-body); }
+
+/* ───────────── Buttons ───────────── */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  border: 1.5px solid var(--line-strong);
+  overflow: hidden;
+  isolation: isolate;
+  transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+.btn::before {
+  content: '';
+  position: absolute; inset: 0;
+  z-index: -1;
+  background: var(--text);
+  transform: translateY(101%);
+  transition: transform 450ms var(--ease-out);
+  border-radius: inherit;
+}
+.btn:hover::before { transform: translateY(0); }
+.btn:hover { color: var(--bg); border-color: var(--text); }
+.btn--primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn--primary::before { background: var(--text); }
+
+/* Inline text link with growing underline */
+.link {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 0% 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 450ms var(--ease-out), color var(--dur-fast);
+}
+.link:hover { background-size: 100% 1.5px; color: var(--accent); }
+
+/* ───────────── Scroll progress ───────────── */
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 60;
+  background: var(--accent);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+/* Elements animated by motion.ts start hidden only when JS + motion are on */
+html.js-motion [data-reveal] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* Dev-only TODO notes */
+.todo {
+  border: 1.5px dashed #ff9b3d;
+  color: #ffb36b;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 14px;
+  margin-block: 16px;
+}
+.todo strong { display: block; margin-bottom: 4px; }
+
+/* Initial states for JS-driven motion (only when motion is on) */
+html.js-motion [data-hero-photo],
+html.js-motion [data-hero-fade],
+html.js-motion [data-hero-cue] { opacity: 0; }
+html.js-motion [data-hero-name] .line > span,
+html.js-motion [data-reveal-lines] .line > span { transform: translateY(105%); }
+html.js-motion [data-hero-line] .w { opacity: 0; }

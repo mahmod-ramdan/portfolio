@@ -1,0 +1,91 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Stages from './Stages.astro';
+import { u } from '../data/url';
+interface Props { items: CollectionEntry<'cases'>[] }
+const { items } = Astro.props;
+---
+<div class="wl" data-hover-list>
+  <ul class="wl__rows">
+    {items.map((c) => (
+      <li data-reveal>
+        <a class="wl__row" href={u(`work/${c.id}`)} data-row>
+          {c.data.cover && (
+            <span class="wl__thumb" aria-hidden="true">
+              <Image src={c.data.cover} alt="" widths={[480, 800]} sizes="100vw" />
+            </span>
+          )}
+          <span class="wl__company display" transition:name={`company-${c.id}`}>{c.data.company}</span>
+          <span class="wl__body">
+            <span class="wl__headline">{c.data.headline}</span>
+            <span class="wl__meta">
+              {c.data.industry.map((i) => <span class="pill pill--muted">{i}</span>)}
+              <Stages lit={c.data.stages} size="sm" quiet />
+            </span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+  <div class="wl__preview" data-preview aria-hidden="true">
+    {items.map((c) => c.data.cover && (
+      <Image src={c.data.cover} alt="" widths={[480]} sizes="380px" data-preview-img />
+    ))}
+  </div>
+</div>
+
+<style>
+  .wl { position: relative; }
+  .wl__rows { border-top: 1px solid var(--line); }
+  .wl__rows > li { border-bottom: 1px solid var(--line); }
+  .wl__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: clamp(16px, 3vw, 48px);
+    align-items: start;
+    padding-block: clamp(28px, 3.4vw, 48px);
+    transition: padding 600ms var(--ease-out);
+  }
+  .wl__company {
+    font-size: clamp(40px, 5.6vw, 84px);
+    line-height: 0.92;
+    transition: color 400ms var(--ease-out), transform 600ms var(--ease-out);
+  }
+  .wl__body { display: grid; gap: 18px; padding-top: 6px; }
+  .wl__headline { font-size: clamp(17px, 1.4vw, 21px); line-height: 1.45; font-weight: 400; max-width: 34ch; }
+  .wl__meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .wl__thumb { display: none; }
+
+  @media (hover: hover) {
+    .wl__row:hover .wl__company { color: var(--accent); transform: translateX(14px); }
+  }
+
+  .wl__preview {
+    position: absolute; top: 0; left: 0; z-index: 3;
+    width: 340px; aspect-ratio: 4 / 3;
+    margin: -170px 0 0 -170px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0; transform: scale(0.9);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    background: var(--bg-elev);
+  }
+  .wl__preview :global(img) {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 0%;
+    opacity: 0;
+  }
+
+  @media (max-width: 860px), (hover: none) {
+    .wl__preview { display: none; }
+    .wl__row { grid-template-columns: 1fr; }
+    .wl__thumb {
+      display: block; aspect-ratio: 16 / 10; overflow: hidden;
+      border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg-elev);
+    }
+    .wl__thumb :global(img) { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0%; }
+  }
+</style>

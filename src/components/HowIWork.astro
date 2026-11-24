@@ -1,0 +1,49 @@
+---
+import Giant from './Giant.astro';
+import Stages from './Stages.astro';
+import { stages } from '../data/site';
+---
+<section class="section how wrap" id="how" aria-labelledby="how-title">
+  <Giant lines={['How I', 'work']} id="how-title" />
+  <p class="how__intro" data-reveal>One cycle, start to end. I can own all of it, or plug into the part you need.</p>
+  <div class="how__strip" data-reveal><Stages all label="The six stages of the marketing cycle" /></div>
+  <ol class="how__grid" data-reveal-group>
+    {stages.map((s, i) => (
+      <li class="how__item" data-reveal>
+        <span class="how__n num">{String(i + 1).padStart(2, '0')}</span>
+        <h3 class="how__name">{s.name}</h3>
+        <p class="how__text">{s.text}</p>
+      </li>
+    ))}
+  </ol>
+  <p class="how__loop muted" data-reveal>Then the numbers feed the next round of research.</p>
+</section>
+
+<style>
+  .how__intro { font-size: clamp(18px, 1.6vw, 22px); max-width: 40ch; margin-bottom: 32px; }
+  .how__strip { margin-bottom: clamp(40px, 6vw, 72px); }
+  .how__grid {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+  }
+  .how__item {
+    padding: clamp(24px, 3vw, 40px) clamp(0px, 2.4vw, 32px) clamp(28px, 3vw, 44px) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .how__item:not(:nth-child(3n + 1)) { padding-left: clamp(16px, 2.4vw, 32px); border-left: 1px solid var(--line); }
+  .how__n { display: block; font-size: 18px; color: var(--accent); margin-bottom: 18px; }
+  .how__name { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(28px, 2.8vw, 40px); line-height: 0.95; margin-bottom: 12px; }
+  .how__text { margin: 0; color: var(--text-muted); max-width: 30ch; }
+  .how__loop { margin-top: 24px; font-size: 15px; }
+
+  @media (max-width: 860px) {
+    .how__grid { grid-template-columns: 1fr 1fr; }
+    .how__item { padding-inline: 0 16px !important; border-left: 0 !important; }
+    .how__item:nth-child(even) { padding-left: 16px !important; border-left: 1px solid var(--line) !important; }
+  }
+  @media (max-width: 520px) {
+    .how__grid { grid-template-columns: 1fr; }
+    .how__item:nth-child(even) { padding-left: 0 !important; border-left: 0 !important; }
+  }
+</style>
