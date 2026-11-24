@@ -25,6 +25,5 @@ results:
   - value: 100%
     label: response rate, in under 15 minutes
 todos:
-  - "Start year: 2019 or 2020? (site uses 2020)"
   - "Post or guide samples, if found on the pages"
 ---

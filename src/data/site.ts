@@ -93,5 +93,5 @@ export const siteTodos = [
   'Updated CV as public/cv.pdf, then set person.cv.ready = true',
   'Logos still missing: Big O Solutions, Ali Alkhajeh law firm (https://www.instagram.com/alialkhajehae/)',
   'Testimonials (manager at Ali Alkhajeh, AppLogica): the section stays hidden until there are at least 2',
-  'Xiaomi start year (2019 or 2020) and exact military service dates',
+  'Exact military service dates',
 ];
