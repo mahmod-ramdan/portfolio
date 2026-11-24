@@ -25,7 +25,7 @@ const Company = d.companyUrl ? 'a' : 'span';
       <a class="case__back link" href={u('work')}>All work</a>
       <div class="case__id">
         {d.logo && (
-          <span class="case__logo"><Image src={d.logo} alt="" height={80} /></span>
+          <span class="case__logo"><Image src={d.logo} alt="" height={80} loading="eager" /></span>
         )}
         <div>
           <Company
