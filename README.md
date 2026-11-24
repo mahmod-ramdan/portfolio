@@ -24,7 +24,7 @@ Everything you'll want to change is plain text:
 `todos:` lists in the case files only show in dev (`npm run dev`), never on the live site.
 
 ### Add the CV
-Save the updated CV as `public/cv.pdf`, then set `cv: { file: 'cv.pdf', ready: true }` in `src/data/site.ts`. The "Download CV" buttons appear automatically.
+Save the updated CV as `public/Mahmoud_Ramadan_CV.pdf`, then set `cv: { file: 'Mahmoud_Ramadan_CV.pdf', ready: true }` in `src/data/site.ts`. The "Download CV" buttons appear automatically.
 
 ## Run locally
 

@@ -22,8 +22,7 @@ export const person = {
   whatsapp: 'https://wa.me/201124941148',
   linkedin: 'https://www.linkedin.com/in/mahmod-ramdan-82a83331b/',
   location: 'Giza, Egypt',
-  // Set ready: true once the updated CV is saved as public/cv.pdf
-  cv: { file: 'cv.pdf', ready: false },
+  cv: { file: 'Mahmoud_Ramadan_CV.pdf', ready: true },
   about: [
     'I started in tech: 3 years at the Faculty of Computers & AI, Cairo University. Then I moved to Commerce to study marketing.',
     'That mix still shapes how I work. I can talk to tech people, and I can sell to everyone else.',
@@ -90,7 +89,6 @@ export const brands = [
 export const agencyClients = ['YANA', 'Fatima Alhammadi', 'MAI Boutique'];
 
 export const siteTodos = [
-  'Updated CV as public/cv.pdf, then set person.cv.ready = true',
   'Logos still missing: Big O Solutions, Ali Alkhajeh law firm (https://www.instagram.com/alialkhajehae/)',
   'Testimonials (manager at Ali Alkhajeh, AppLogica): the section stays hidden until there are at least 2',
   'Exact military service dates',
