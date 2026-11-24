@@ -1,726 +1,151 @@
-<!DOCTYPE html>
-<!--
-  ============================================================
-  MAHMOUD RAMADAN — Personal Portfolio (Portfolio + Dashboard)
-  بورتفوليو محمود رمضان  |  عربي / English  |  بيانات حقيقية
-  ------------------------------------------------------------
-  • لوحة التحكم مخفية عن الزوار. تظهر فقط بإضافة #mrf99 في آخر اللينك:
-        index.html#mrf99
-  • كل شركة: ارفع اللوجو + عدد مفتوح من صور المشاريع (اضغط الصورة تكبر)
-    + عدد مفتوح من الفيديوهات (لينك YouTube/Vimeo). كل صورة/فيديو ليها زر حذف.
-  • ملاحظة: تشغيل الفيديو من اليوتيوب بيشتغل صح بعد رفع الموقع على استضافة
-    (Vercel/Netlify). محليًا (فتح الملف مباشرة) ممكن اليوتيوب يمنع التشغيل.
-  • ⬇ تنزيل الموقع = نسخة index.html جاهزة للنشر بالمحتوى بتاعك.
-  ============================================================
--->
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mahmoud Ramadan — Marketing Project Manager, Social Media Specialist &amp; Media Buyer</title>
-<meta name="description" content="محمود رمضان — Marketing Project Manager وSocial Media Specialist وMedia Buyer بخبرة أكثر من 6 سنوات في المحتوى، إدارة السوشيال ميديا، وإعلانات ميتا (Meta Ads). اشتغل مع Xiaomi و E-Spaces و Creativa (MCIT) و Ali Alkhajeh." />
-<meta name="keywords" content="Mahmoud Ramadan, محمود رمضان, marketing project manager, social media specialist, media buyer, meta ads, content marketing, تسويق, سوشيال ميديا, ميديا باير, إعلانات ميتا" />
-<meta name="author" content="Mahmoud Ramadan" />
-<meta name="robots" content="index, follow, max-image-preview:large" />
-<!-- بعد النشر: غيّر REPLACE-WITH-YOUR-DOMAIN بالدومين الحقيقي في canonical و og:url و og:image -->
-<link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Mahmoud Ramadan — Marketing Project Manager, Social Media Specialist & Media Buyer" />
-<meta property="og:description" content="خبرة أكثر من 6 سنوات في المحتوى، إدارة السوشيال ميديا، وإعلانات ميتا. اشتغل مع Xiaomi و E-Spaces و Creativa و Ali Alkhajeh." />
-<meta property="og:locale" content="ar_EG" />
-<meta property="og:locale:alternate" content="en_US" />
-<meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/" />
-<meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/preview.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Mahmoud Ramadan — Marketing Project Manager & Social Media Specialist" />
-<meta name="twitter:description" content="Marketing, social media & Meta media buying. 6+ years across Xiaomi, E-Spaces, Creativa (MCIT), and Ali Alkhajeh." />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Mahmoud Ramadan","alternateName":"محمود رمضان","jobTitle":"Marketing Project Manager & Social Media Specialist","description":"Marketing Project Manager, Social Media Specialist and Media Buyer with 6+ years of experience in content, social media management and Meta Ads.","email":"mailto:mahmodrf25@gmail.com","telephone":"+201112435090","worksFor":{"@type":"Organization","name":"Ali Alkhajeh Marketing Agency"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Cairo University — Faculty of Commerce"},"knowsAbout":["Marketing Strategy","Social Media Management","Media Buying","Meta Ads","Content Creation","Account Management","Campaign Planning"],"knowsLanguage":["Arabic","English"],"address":{"@type":"PostalAddress","addressLocality":"Giza","addressCountry":"EG"},"sameAs":["https://www.linkedin.com/in/mahmod-ramdan-82a83331b/"]}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Poppins:wght@400;600;700;800;900&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
-<style>
-  :root{
-    --brand:#FF5A5F; --brand2:#6C4CF1; --brand3:#FFC93C; --brand4:#12B98C;
-    --bg:#FFF7F0; --ink:#1B1524; --muted:#6A6377; --card:#FFFFFF;
-    --line:rgba(27,21,36,.10);
-    --grad:linear-gradient(120deg,var(--brand) 0%,var(--brand2) 100%);
-    --grad2:linear-gradient(120deg,var(--brand2),var(--brand4));
-    --shadow:0 26px 60px -26px rgba(27,21,36,.35);
-    --radius:26px; --maxw:1140px;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth;background:var(--bg)}
-  html:lang(ar) body{font-family:'Tajawal',system-ui,sans-serif}
-  html:lang(en) body{font-family:'Poppins',system-ui,sans-serif}
-  body{background:transparent;color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .en{font-family:'Sora',sans-serif;direction:ltr;unicode-bidi:isolate;display:inline-block}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  section{padding:88px 0;position:relative}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;color:var(--brand2);background:color-mix(in srgb,var(--brand2) 12%,#fff);padding:7px 15px;border-radius:999px}
-  .stitle{font-weight:900;font-size:clamp(28px,4.4vw,44px);line-height:1.2;letter-spacing:-.5px;margin:16px 0 14px}
-  .lead{color:var(--muted);font-size:18px;max-width:680px}
-  .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:13px 24px;border-radius:14px;cursor:pointer;border:2px solid transparent;transition:.22s;font-family:inherit;white-space:nowrap}
-  .btn.primary{background:var(--grad);color:#fff;box-shadow:0 16px 34px -14px var(--brand)}
-  .btn.primary:hover{transform:translateY(-2px)}
-  .btn.ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
-  .btn.ghost:hover{background:var(--ink);color:#fff}
-  .blob{position:absolute;border-radius:50%;filter:blur(8px);opacity:.5;z-index:0;pointer-events:none}
-  .bg-fx{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
-  .bg-fx .streak{position:absolute;border-radius:120px;filter:blur(72px);opacity:.42}
-  .bg-fx .streak.s1{width:64vw;height:190px;top:6%;inset-inline-start:-12%;background:linear-gradient(90deg,var(--brand),var(--brand3));transform:rotate(-14deg);animation:drift1 20s ease-in-out infinite alternate}
-  .bg-fx .streak.s2{width:58vw;height:160px;top:40%;inset-inline-end:-14%;background:linear-gradient(90deg,var(--brand2),var(--brand3));transform:rotate(11deg);animation:drift2 24s ease-in-out infinite alternate}
-  .bg-fx .streak.s3{width:74vw;height:210px;bottom:4%;inset-inline-start:-8%;background:linear-gradient(90deg,var(--brand4),var(--brand));transform:rotate(-8deg);animation:drift1 28s ease-in-out infinite alternate}
-  .bg-fx .blobfx{position:absolute;border-radius:50%;filter:blur(84px);opacity:.34}
-  .bg-fx .blobfx.b1{width:340px;height:340px;top:-70px;inset-inline-end:5%;background:radial-gradient(circle,var(--brand3),transparent 66%);animation:floatx 16s ease-in-out infinite alternate}
-  .bg-fx .blobfx.b2{width:300px;height:300px;bottom:12%;inset-inline-end:24%;background:radial-gradient(circle,var(--brand2),transparent 66%);animation:floaty 22s ease-in-out infinite alternate}
-  @keyframes drift1{to{transform:translateY(34px) rotate(-9deg)}}
-  @keyframes drift2{to{transform:translateY(-28px) rotate(15deg)}}
-  @keyframes floatx{to{transform:translate(-26px,28px)}}
-  @keyframes floaty{to{transform:translate(22px,-22px)}}
-  @media (prefers-reduced-motion:reduce){.bg-fx .streak,.bg-fx .blobfx{animation:none}}
-
-  header.nav{position:sticky;top:16px;z-index:60;margin-top:16px}
-  .nav-in{max-width:var(--maxw);margin:0 auto;padding:10px 14px 10px 20px;display:flex;align-items:center;justify-content:space-between;background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 30px -18px rgba(27,21,36,.3)}
-  .brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:16px}
-  .brand .mark{width:40px;height:40px;border-radius:12px;background:var(--grad);display:grid;place-items:center;color:#fff;font-family:'Sora';font-weight:800;font-size:15px}
-  .brand small{display:block;font-size:11px;font-weight:600;color:var(--muted)}
-  .nav-links{display:flex;gap:3px;align-items:center}
-  .nav-links a{padding:9px 13px;border-radius:11px;font-weight:700;font-size:14.5px;color:var(--muted);transition:.2s}
-  .nav-links a:hover{color:var(--ink);background:color-mix(in srgb,var(--brand) 10%,#fff)}
-  .nav-actions{display:flex;align-items:center;gap:10px}
-  .lang-btn{font-family:'Sora';font-weight:800;font-size:13px;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:11px;padding:9px 13px;cursor:pointer;transition:.2s}
-  .lang-btn:hover{border-color:var(--brand)}
-  .menu-btn{display:none;border:none;background:transparent;font-size:22px;cursor:pointer;color:var(--ink)}
-
-  .hero{padding-top:48px}
-  .hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:52px;align-items:center}
-  .hero h1{font-weight:900;font-size:clamp(34px,5.2vw,58px);line-height:1.12;letter-spacing:-1px;margin:20px 0 18px}
-  .hero .sub{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:28px}
-  .hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:36px}
-  .hero-stats{display:flex;gap:30px;flex-wrap:wrap}
-  .hstat b{display:block;font-family:'Sora';font-weight:800;font-size:30px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hstat span{font-size:13px;color:var(--muted);font-weight:700}
-  .hero-art{position:relative;z-index:1}
-  .photo-frame{position:relative;border-radius:40% 40% 42% 42%/44% 44% 40% 40%;overflow:hidden;aspect-ratio:1/1.05;background:var(--grad2);box-shadow:var(--shadow);border:6px solid var(--card)}
-  .photo-frame img{width:100%;height:100%;object-fit:cover}
-  .photo-empty{width:100%;height:100%;display:grid;place-items:center;color:#fff;font-weight:800;text-align:center;padding:20px;font-size:15px;opacity:.92}
-  .chip{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 15px;font-weight:800;font-size:14px;box-shadow:var(--shadow);z-index:3;display:flex;align-items:center;gap:9px}
-  .chip .em{font-size:19px}
-  .chip.t{top:14px;inset-inline-start:-18px}
-  .chip.b{bottom:26px;inset-inline-end:-14px}
-  .chip small{display:block;font-size:11px;color:var(--muted);font-weight:700}
-
-  .strip{background:var(--ink);color:#fff;overflow:hidden;padding:16px 0}
-  .marq{display:flex;gap:40px;white-space:nowrap;animation:marq 24s linear infinite;font-family:'Sora';font-weight:800;font-size:17px;letter-spacing:1px}
-  .marq span{opacity:.92;display:inline-flex;gap:40px;align-items:center}
-  .marq .dot{width:7px;height:7px;border-radius:50%;background:var(--brand3);display:inline-block}
-  @keyframes marq{to{transform:translateX(-50%)}}
-
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-  .about-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/4.2;background:var(--grad2);box-shadow:var(--shadow)}
-  .about-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-  .about-card h4{font-size:15px;color:var(--muted);font-weight:800;margin-bottom:14px}
-  .factline{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;font-weight:600;padding:9px 0;border-bottom:1px solid var(--line)}
-  .factline:last-child{border:none}
-  .factline .ic{min-width:34px;height:34px;border-radius:10px;background:color-mix(in srgb,var(--brand2) 12%,#fff);display:grid;place-items:center;font-size:16px}
-
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
-  .svc{border-radius:var(--radius);padding:28px;color:#fff;min-height:200px;transition:.25s}
-  .svc:hover{transform:translateY(-6px)}
-  .svc .em{width:52px;height:52px;border-radius:15px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:24px;margin-bottom:16px}
-  .svc h3{font-size:19px;font-weight:900;margin-bottom:8px}
-  .svc p{font-size:14.5px;opacity:.95}
-  .svc:nth-child(3n+1){background:linear-gradient(140deg,var(--brand),#ff8a5c)}
-  .svc:nth-child(3n+2){background:linear-gradient(140deg,var(--brand2),#9b6bff)}
-  .svc:nth-child(3n+3){background:linear-gradient(140deg,var(--brand4),#3dd0a6)}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-  .chips span{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:9px 16px;font-weight:700;font-size:14px}
-
-  /* COMPANIES */
-  .co{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-top:20px;transition:.25s}
-  .co:hover{box-shadow:var(--shadow)}
-  .co-top{display:grid;grid-template-columns:74px 1fr;gap:22px}
-  .co-logo{width:74px;height:74px;border-radius:18px;display:grid;place-items:center;font-family:'Sora';font-weight:800;font-size:22px;color:#fff;overflow:hidden}
-  .co-logo img{width:100%;height:100%;object-fit:contain;background:#fff}
-  .co:nth-child(6n+1) .co-logo{background:linear-gradient(140deg,var(--brand),#ff8a5c)}
-  .co:nth-child(6n+2) .co-logo{background:linear-gradient(140deg,var(--brand2),#9b6bff)}
-  .co:nth-child(6n+3) .co-logo{background:linear-gradient(140deg,var(--brand4),#3dd0a6)}
-  .co:nth-child(6n+4) .co-logo{background:linear-gradient(140deg,#ff7a45,var(--brand3))}
-  .co:nth-child(6n+5) .co-logo{background:linear-gradient(140deg,var(--brand2),var(--brand4))}
-  .co:nth-child(6n+6) .co-logo{background:linear-gradient(140deg,var(--brand),var(--brand2))}
-  .co-head{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin-bottom:4px}
-  .co-head h3{font-size:20px;font-weight:900}
-  .co-role{color:var(--brand2);font-weight:800;font-size:14.5px}
-  .co-meta{font-size:12.5px;color:var(--muted);font-weight:700;display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-  .co-meta span{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:3px 9px}
-  .co p.desc{color:var(--muted);font-size:15px;margin-bottom:10px}
-  .co ul{list-style:none;display:grid;gap:6px}
-  .co ul li{position:relative;padding-inline-start:20px;font-size:14.5px}
-  .co ul li::before{content:"";position:absolute;inset-inline-start:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--brand4)}
-  .co-work{margin-top:20px}
-  .co-work h4{font-size:13px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
-  .co-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px}
-  .gitem{border:0;padding:0;cursor:zoom-in;border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--bg);position:relative;box-shadow:0 10px 26px -16px rgba(27,21,36,.4)}
-  .gitem img{width:100%;height:100%;object-fit:cover;transition:.3s}
-  .gitem:hover img{transform:scale(1.06)}
-  .co-videos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:12px}
-  .vitem{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;cursor:pointer;background:#0c0a12;display:block}
-  .vitem>img{width:100%;height:100%;object-fit:cover;opacity:.92}
-  .vitem .play{position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;display:grid;place-items:center;font-size:20px;padding-inline-start:4px;transition:.2s}
-  .vitem:hover .play{background:var(--brand);transform:scale(1.08)}
-  .vitem.vlink{display:grid;place-items:center;color:#fff;text-decoration:none}
-  .vitem.vlink .play{position:static;margin:0}
-  .vitem iframe,.co-vembed iframe{width:100%;height:100%;border:0;position:absolute;inset:0}
-  .co-vembed{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000}
-  .lightbox{position:fixed;inset:0;background:rgba(10,8,15,.92);z-index:200;display:none;place-items:center;padding:24px;cursor:zoom-out}
-  .lightbox.open{display:grid}
-  .lightbox img{max-width:94vw;max-height:92vh;border-radius:12px;box-shadow:0 30px 80px -20px #000}
-  .lightbox .close{position:fixed;top:18px;inset-inline-end:22px;color:#fff;font-size:30px;font-weight:800;cursor:pointer;line-height:1}
-
-  .cl-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
-  .cl{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-weight:800;font-size:15px;display:flex;align-items:center;gap:10px}
-  .cl .d{width:10px;height:10px;border-radius:50%}
-  .cl:nth-child(5n+1) .d{background:var(--brand)} .cl:nth-child(5n+2) .d{background:var(--brand2)}
-  .cl:nth-child(5n+3) .d{background:var(--brand4)} .cl:nth-child(5n+4) .d{background:var(--brand3)} .cl:nth-child(5n+5) .d{background:#ff7a45}
-
-  .cta-band{background:var(--grad);border-radius:34px;padding:50px;color:#fff;position:relative;overflow:hidden}
-  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;position:relative;z-index:2}
-  .cta-band .stitle{color:#fff} .cta-band .lead{color:rgba(255,255,255,.92)}
-  .cinfo{display:grid;gap:12px;margin-top:20px}
-  .cinfo a,.cinfo div{display:flex;align-items:center;gap:13px;font-weight:700;font-size:15.5px;color:#fff}
-  .cinfo .ic{min-width:44px;height:44px;border-radius:13px;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:19px}
-  .cinfo small{display:block;font-size:12px;opacity:.85;font-weight:700}
-  form.cform{background:var(--card);border-radius:var(--radius);padding:26px;color:var(--ink);box-shadow:var(--shadow)}
-  .field{margin-bottom:14px}
-  .field label{display:block;font-weight:800;font-size:14px;margin-bottom:7px}
-  .field input,.field textarea{width:100%;background:var(--bg);border:2px solid var(--line);border-radius:13px;padding:12px 15px;color:var(--ink);font-family:inherit;font-size:15px;transition:.2s}
-  .field input:focus,.field textarea:focus{outline:none;border-color:var(--brand)}
-  .field textarea{resize:vertical;min-height:84px}
-  form.cform .btn{width:100%;justify-content:center}
-
-  footer{text-align:center;padding:38px 0 30px;color:var(--muted);font-size:14px}
-  footer .brand{justify-content:center;margin-bottom:12px}
-
-  .fab{position:fixed;inset-block-end:22px;inset-inline-start:22px;z-index:80;background:var(--ink);color:#fff;border:none;border-radius:16px;padding:14px 20px;font-family:inherit;font-weight:800;font-size:15px;cursor:pointer;box-shadow:0 16px 34px -12px rgba(0,0,0,.5);display:flex;align-items:center;gap:9px;transition:.2s}
-  .fab:hover{transform:translateY(-2px)}
-  .dash-overlay{position:fixed;inset:0;background:rgba(20,15,28,.5);backdrop-filter:blur(2px);z-index:90;opacity:0;visibility:hidden;transition:.25s}
-  .dash-overlay.open{opacity:1;visibility:visible}
-  .dash{position:fixed;inset-block:0;inset-inline-end:0;width:430px;max-width:93vw;background:#fff;z-index:95;transform:translateX(110%);transition:transform .3s cubic-bezier(.3,.8,.3,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px -20px rgba(0,0,0,.4)}
-  html[dir=rtl] .dash{transform:translateX(-110%)}
-  .dash.open{transform:translateX(0)!important}
-  .dash-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:var(--ink);color:#fff}
-  .dash-head b{font-size:16px} .dash-head .x{background:rgba(255,255,255,.15);border:none;color:#fff;width:34px;height:34px;border-radius:10px;cursor:pointer;font-size:18px}
-  .dash-body{padding:14px 18px 40px;overflow-y:auto;flex:1}
-  .acc{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
-  .acc>button{width:100%;text-align:start;background:#fff;border:none;padding:14px 16px;font-family:inherit;font-weight:800;font-size:15px;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
-  .acc>.inner{padding:6px 16px 16px;display:none}
-  .acc.open>.inner{display:block}
-  .acc>button .ca{transition:.2s;color:var(--muted)} .acc.open>button .ca{transform:rotate(180deg)}
-  .frow{margin-bottom:13px}
-  .frow>label{display:block;font-weight:800;font-size:13px;margin-bottom:6px;color:var(--ink)}
-  .bi{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-  .bi>span{font-family:'Sora';font-weight:800;font-size:11px;color:var(--muted);min-width:22px;text-align:center;background:var(--bg);border-radius:6px;padding:4px 2px}
-  .dash input,.dash textarea,.dash select{width:100%;background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;font-family:inherit;font-size:13.5px;color:var(--ink)}
-  .dash textarea{resize:vertical;min-height:52px}
-  .dash input[type=file]{padding:7px;font-size:12px;background:#fff}
-  .thumb{width:100%;max-height:96px;object-fit:contain;background:#fff;border-radius:10px;margin-bottom:8px;border:1px solid var(--line)}
-  .mini-clear{margin:2px 0 4px;background:#ffe9e9;color:#d33;border:none;border-radius:9px;padding:6px 12px;font-family:inherit;font-weight:800;font-size:12px;cursor:pointer}
-  .ed-gal{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
-  .ed-thumb{position:relative;width:64px;height:64px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
-  .ed-thumb img{width:100%;height:100%;object-fit:cover}
-  .ed-thumb .del{position:absolute;inset-block-start:2px;inset-inline-end:2px;width:20px;height:20px;border-radius:6px;background:rgba(211,51,51,.95);color:#fff;border:none;cursor:pointer;font-size:11px;font-weight:800;line-height:1;padding:0}
-  .ed-vrow{display:flex;gap:6px;align-items:center;margin-bottom:6px}
-  .ed-vrow input{flex:1}
-  .ed-vrow .del{background:#ffe9e9;color:#d33;border:none;border-radius:8px;width:32px;height:34px;cursor:pointer;font-weight:800;flex:none}
-  .rep-item{border:1px dashed var(--line);border-radius:12px;padding:12px;margin-bottom:11px;position:relative;background:#fdfcff}
-  .rep-item>.del{position:absolute;inset-block-start:8px;inset-inline-end:8px;background:#ffe9e9;color:#d33;border:none;border-radius:8px;width:26px;height:26px;cursor:pointer;font-weight:800}
-  .rep-tools{position:absolute;inset-block-start:8px;inset-inline-end:8px;display:flex;gap:4px;z-index:2}
-  .rep-tools button{width:26px;height:26px;border-radius:8px;cursor:pointer;font-weight:800;font-size:12px;line-height:1;padding:0}
-  .rep-tools .mv{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
-  .rep-tools .mv:disabled{opacity:.35;cursor:default}
-  .rep-tools .del{background:#ffe9e9;color:#d33;border:none;position:static}
-  .rep-item .lbl{font-weight:800;font-size:12px;color:var(--brand2);margin-bottom:9px}
-  .addbtn{width:100%;border:1.5px dashed var(--brand2);background:color-mix(in srgb,var(--brand2) 7%,#fff);color:var(--brand2);border-radius:11px;padding:10px;font-family:inherit;font-weight:800;cursor:pointer;font-size:13.5px;margin-top:4px}
-  .pal-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:4px}
-  .pal{width:44px;height:44px;border-radius:12px;cursor:pointer;border:3px solid transparent}
-  .pal.sel{border-color:var(--ink)}
-  .dash-foot{padding:14px 18px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:9px;background:#fff}
-  .dash-foot button{border:none;border-radius:11px;padding:11px;font-family:inherit;font-weight:800;font-size:13.5px;cursor:pointer}
-  .db-save{grid-column:1/-1;background:var(--grad);color:#fff}
-  .db-exp{background:var(--ink);color:#fff} .db-json{background:var(--bg);color:var(--ink);border:1px solid var(--line)!important}
-  .db-imp{background:var(--bg);color:var(--ink);border:1px solid var(--line)!important} .db-reset{background:#ffe9e9;color:#d33}
-  .hint{font-size:12px;color:var(--muted);background:var(--bg);border-radius:10px;padding:9px 11px;margin-bottom:12px;line-height:1.6}
-  .saved-toast{position:fixed;inset-block-end:22px;inset-inline-end:22px;background:var(--brand4);color:#fff;padding:12px 20px;border-radius:12px;font-weight:800;z-index:120;opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none}
-  .saved-toast.show{opacity:1;transform:translateY(0)}
-
-  @media(max-width:920px){
-    .hero-grid,.about-grid,.cta-grid{grid-template-columns:1fr;gap:38px}
-    .svc-grid{grid-template-columns:1fr}
-    .nav-links{display:none;position:absolute;top:70px;inset-inline:14px;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;gap:4px;box-shadow:var(--shadow)}
-    .nav-links.open{display:flex}
-    .menu-btn{display:block}
-    .hero-art{max-width:380px;margin:0 auto}
-    .cta-band{padding:32px 22px} section{padding:66px 0}
-    .co-top{grid-template-columns:1fr} .co-logo{width:60px;height:60px;font-size:18px}
-  }
-</style>
-</head>
-<body>
-
-<script id="content-data" type="application/json"></script>
-
-<div class="bg-fx" aria-hidden="true"><span class="streak s1"></span><span class="streak s2"></span><span class="streak s3"></span><span class="blobfx b1"></span><span class="blobfx b2"></span></div>
-
-<header class="nav">
-  <div class="nav-in">
-    <a href="#home" class="brand"><span class="mark" data-mark>MR</span><span data-brandname>—<small data-role>—</small></span></a>
-    <nav class="nav-links" id="navLinks"></nav>
-    <div class="nav-actions">
-      <button class="lang-btn" id="langBtn">EN</button>
-      <a href="#contact" class="btn primary" data-navcta>—</a>
-      <button class="menu-btn" id="menuBtn">☰</button>
-    </div>
-  </div>
-</header>
-
-<main id="app"></main>
-<noscript>
-  <div style="max-width:820px;margin:40px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7">
-    <h1>Mahmoud Ramadan — Marketing Project Manager &amp; Social Media Specialist</h1>
-    <p>محمود رمضان — مدير مشاريع تسويقية، سوشيال ميديا سبيشاليست، وميديا باير بخبرة أكثر من 6 سنوات في صناعة المحتوى، إدارة السوشيال ميديا، وإعلانات ميتا (Meta Ads). خبرة مع Xiaomi EG &amp; POCO، E-Spaces، Creativa (وزارة الاتصالات)، MEC Academy، وAli Alkhajeh (الإمارات).</p>
-    <p>Marketing Project Manager, Social Media Specialist &amp; Media Buyer with 6+ years across content, social media, and Meta media buying.</p>
-    <p>Email: mahmodrf25@gmail.com — LinkedIn: linkedin.com/in/mahmod-ramdan-82a83331b</p>
-  </div>
-</noscript>
-
-<button class="fab" id="fab" style="display:none">⚙️ <span data-ui="dash">لوحة التحكم</span></button>
-
-<div class="lightbox" id="lightbox"><span class="close">✕</span><img alt=""></div>
-
-<div class="dash-overlay" id="dashOverlay"></div>
-<aside class="dash" id="dash">
-  <div class="dash-head"><b data-ui="dashTitle">لوحة التحكم</b><button class="x" id="dashClose">✕</button></div>
-  <div class="dash-body" id="dashBody"></div>
-  <div class="dash-foot">
-    <button class="db-save" id="dbSave" data-ui="saveBtn">💾 حفظ</button>
-    <button class="db-exp" id="dbExport" data-ui="exportBtn">⬇ تنزيل الموقع</button>
-    <button class="db-json" id="dbJson" data-ui="backupBtn">نسخة JSON</button>
-    <button class="db-imp" id="dbImport" data-ui="importBtn">استيراد</button>
-    <button class="db-reset" id="dbReset" data-ui="resetBtn">↺ تصفير</button>
-  </div>
-</aside>
-<input type="file" id="jsonInput" accept="application/json" style="display:none" />
-<div class="saved-toast" id="toast">✓</div>
-
-<script>
-/* ============ REAL CONTENT (from CV + Canva) ============ */
-const DEFAULT = {
-  settings:{ defaultLang:"ar", theme:"peach", passcode:"" },
-  brand:{ar:"محمود رمضان",en:"Mahmoud Ramadan"},
-  mark:"MR",
-  role:{ar:"مدير مشاريع تسويقية & سوشيال ميديا سبيشاليست",en:"Marketing Project Manager & Social Media Specialist"},
-  navcta:{ar:"تواصل معي",en:"Get in touch"},
-  hero:{
-    eyebrow:{ar:"محتوى · سوشيال ميديا · ميديا باينج · إدارة حسابات",en:"Content · Social · Media Buying · Account Mgmt"},
-    title:{ar:"بابني حضورًا رقميًا متكامل — من المحتوى للحملة للتقرير.",en:"I build complete digital presence — from content to campaign to report."},
-    sub:{ar:"أنا محمود رمضان، خبرة حوالي ٦ سنين في التسويق. بدأت ككاتب وصانع محتوى، وبعدها اشتغلت سوشيال ميديا سبيشاليست وميديا باير وأكونت مانجر مع براندات ووكالات زي Xiaomi وE-Spaces وCreativa، ودلوقتي بدير ٥ حسابات في الإمارات.",
-         en:"I'm Mahmoud Ramadan, with ~6 years in marketing. I started as a content writer & creator, then worked as a Social Media Specialist, Media Buyer, and Account Manager with brands like Xiaomi, E-Spaces, and Creativa — and I currently manage 5 accounts in the UAE."},
-    ctaA:{ar:"تواصل واتساب",en:"WhatsApp me"},
-    ctaB:{ar:"LinkedIn",en:"LinkedIn"},
-    image:"",
-    stats:[
-      {n:"6+",l:{ar:"سنين خبرة",en:"years experience"}},
-      {n:"12",l:{ar:"أعلى ROAS",en:"best ROAS"}},
-      {n:"12K+",l:{ar:"نمو متابعين",en:"followers grown"}},
-      {n:"9",l:{ar:"براندات ووكالات",en:"brands & agencies"}}
-    ]
-  },
-  strip:["Xiaomi EG","POCO EG","E-Spaces","CoCafe","Creativa","MCIT","MEC Academy","Ali Alkhajeh","Learn It"],
-  about:{
-    eyebrow:{ar:"نبذة عني",en:"About me"},
-    title:{ar:"من كتابة المحتوى لإدارة الحسابات والحملات.",en:"From content writing to managing accounts & campaigns."},
-    body:{ar:"خبرتي بتغطي B2B وB2C، واشتغلت على المحتوى، إدارة الصفحات، الحملات، والميديا باينج. بدأت في Xiaomi سنة 2019 من فريق الموديريشن، واتدرّجت لحد ما بقيت مسؤول عن إدارة الصفحات كاملة: خطط محتوى، تقارير، KPIs، وتحليل منافسين — ودلوقتي بدير حسابات في الإمارات في مجالات مختلفة.",
-         en:"My experience spans B2B and B2C — content, page management, campaigns, and media buying. I started at Xiaomi in 2019 on the moderation team and grew into full page ownership: content calendars, reporting, KPIs, and competitor analysis — and I now manage UAE accounts across different industries."},
-    image:"",
-    facts:[
-      {ic:"🎓",ar:"جامعة القاهرة — كلية تجارة، تسويق وإدارة أعمال",en:"Cairo University — Faculty of Commerce, Marketing & Business Admin"},
-      {ic:"🌍",ar:"العربية (لغة أم) · الإنجليزية (Professional Working)",en:"Arabic (Native) · English (Professional Working)"},
-      {ic:"📍",ar:"الجيزة، مصر · متاح للعمل عن بُعد",en:"Giza, Egypt · Available remotely"},
-      {ic:"🧠",ar:"B2B & B2C · محتوى · سوشيال · حملات · تقارير",en:"B2B & B2C · content · social · campaigns · reporting"}
-    ]
-  },
-  skills:{
-    eyebrow:{ar:"المهارات",en:"Skills"},
-    title:{ar:"3 مجالات أشتغل فيها كل يوم.",en:"Three areas I work in every day."},
-    items:[
-      {icon:"🎯",title:{ar:"عقلية B2B & الميديا باينج",en:"B2B Mindset & Media Buying"},desc:{ar:"خبرة في مشاريع B2B علّمتني التواصل بشكل عملي وواضح. وبشتغل ميديا باينج على Meta: تصميم وتنفيذ الحملات، اختبار الأفكار، وتحسين النتائج — لحد ما وصلت لـROAS 12.",en:"B2B experience taught me to communicate with clarity and value. I run Meta media buying — designing and executing campaigns, testing ideas, and improving results — reaching a ROAS of 12."}},
-      {icon:"✍️",title:{ar:"صناعة المحتوى",en:"Content Creation"},desc:{ar:"من كتابة البوستات والمحتوى الإعلاني لتوليد أفكار مناسبة لكل براند. بركّز على محتوى واضح وقريب وسهل التفاعل معاه: بوستات، أفكار حملات، وكونسبتس short-form.",en:"From writing posts and ad copy to ideas that fit each brand. I focus on clear, relatable content — social posts, campaign ideas, and short-form concepts that connect."}},
-      {icon:"📱",title:{ar:"إدارة السوشيال ميديا",en:"Social Media Management"},desc:{ar:"إدارة صفحات في مجالات مختلفة: تخطيط، نشر، وتقارير. متعوّد على تنظيم Content Calendars، الحفاظ على اتساق الصفحة، ومتابعة الأداء وتعديل المحتوى حسب اللي بيشتغل.",en:"Managing pages across industries: planning, posting, and reporting. I organize content calendars, keep pages consistent, and adjust content based on what performs."}}
-    ],
-    core:["Marketing Strategy","Media Buying","Meta Ads","Project Management","Account Management","Campaign Planning","Client Management","Team Coordination","Content Strategy","Marketing Planning"]
-  },
-  companies:{
-    eyebrow:{ar:"الخبرات",en:"Experience"},
-    title:{ar:"كل شركة اشتغلت فيها — بتفاصيلها وشغلها.",en:"Every company I worked with — details and work."},
-    items:[
-      {mark:"AA",logo:"",name:{ar:"Ali Alkhajeh Marketing Agency",en:"Ali Alkhajeh Marketing Agency"},role:{ar:"Senior Social Media Specialist · إدارة حسابات ومشاريع",en:"Senior Social Media Specialist · Account & Project Mgmt"},period:"2026 – Present",type:{ar:"الإمارات · Onsite",en:"UAE · Onsite"},
-       desc:{ar:"بدير حاليًا ٥ حسابات في الإمارات في مجالات مختلفة: بيوتي وكوزميتكس، مكتبين محاماة، استوديو تصميم داخلي، ومطعم.",en:"Currently managing 5 UAE accounts across different industries: beauty & cosmetics, two law firms, an interior design studio, and a restaurant."},
-       bullets:{ar:["إدارة يومية لـ٥ حسابات في مجالات مختلفة.","بناء استراتيجيات وخطط عمل حسب أهداف الكلاينت.","تخطيط المحتوى وتجهيز Content Calendars شهرية.","محتوى أداء مرتبط بأهداف الحملات.","التحضير لجلسات التصوير والمساهمة في سكريبتات المحتوى.","نقطة التواصل الأساسية مع الكلاينت ومتابعة التسليم."],
-                en:["Day-to-day management of 5 accounts across industries.","Build strategies & action plans based on client goals.","Content planning and monthly content calendars.","Performance content aligned with campaign goals.","Prepare shooting sessions and contribute to content scripts.","Main client contact; track timelines and delivery."]},
-       media:[],videos:[]},
-      {mark:"MEC",logo:"",name:{ar:"MEC Academy",en:"MEC Academy"},role:{ar:"ميديا باير · إعلانات ميتا",en:"Media Buyer · Meta Ads"},period:"2023 – 2024",type:{ar:"ميديا باينج",en:"Media Buying"},
-       desc:{ar:"مسؤول عن تصميم وتنفيذ الحملات الإعلانية على Meta لأكاديمية MEC — من بناء الاستراتيجية الإعلانية وكتابة المحتوى الإعلاني، لإدارة الكامبينز وتحسين النتائج، وربط الماركتنج بالمبيعات في فانل واحدة.",en:"Owned the design and execution of Meta ad campaigns for MEC Academy — from ad strategy and copywriting to campaign management and optimization, connecting marketing and sales in one funnel."},
-       bullets:{ar:["تصميم وتنفيذ حملات إعلانية على Meta من البداية للنهاية.","رفع جودة الليدز بأكتر من 90% مقارنة بالفترة السابقة.","الوصول لـ ROAS يوصل لـ 12.","تحقيق أكتر من 90% من تارجت المبيعات طوال الفترة.","بناء Funnel حقيقية تربط فريق المبيعات بالماركتنج، والمحتوى على الصفحة بالكامبينز.","كتابة المحتوى الإعلاني (Ad Copy) اللي بتشتغل عليه الحملات."],
-                en:["Designed and executed Meta ad campaigns end to end.","Raised lead quality by 90%+ versus the previous period.","Reached a ROAS of up to 12.","Hit 90%+ of the sales target throughout the period.","Built a real funnel connecting sales and marketing, and page content with campaigns.","Wrote the ad copy that powered the campaigns."]},
-       media:[],videos:[]},
-      {mark:"Cr",logo:"",name:{ar:"Creativa — وزارة الاتصالات & Digital Egypt Hub",en:"Creativa — MCIT & Digital Egypt Hub"},role:{ar:"Social Media Specialist",en:"Social Media Specialist"},period:"2024 – 2025",type:{ar:"Remote · حكومي",en:"Remote · Government"},
-       desc:{ar:"شغل بالتعاون مع وزارة الاتصالات وتكنولوجيا المعلومات ومركز Digital Egypt للابتكار — دبلومات وكورسات لطلاب الجامعات، وهاكاثونات لريادة الأعمال، بعضها اتدعم بتمويل واحتضان.",en:"In collaboration with the Ministry of Communications (MCIT) and the Digital Egypt Innovation Hub — diplomas and courses for university students, plus entrepreneurship hackathons, some with funding and incubation."},
-       bullets:{ar:["نمّيت الصفحة لأكتر من 12K متابع في وقت قصير عن طريق المحتوى.","تخطيط وكتابة محتوى للدبلومات والكورسات والبرامج التدريبية.","التواصل مع الوزارة ومركز الابتكار.","متابعة التارجت الشهري وتنفيذ الاستراتيجية."],
-                en:["Grew the page to 12K+ followers quickly through planned content.","Planned and wrote content for diplomas, courses & programs.","Handled communication with the ministry and the innovation hub.","Followed monthly targets and executed the content strategy."]},
-       media:[],videos:[]},
-      {mark:"ES",logo:"",name:{ar:"E-Spaces",en:"E-Spaces"},role:{ar:"Social Media Specialist ← Manager",en:"Social Media Specialist → Manager"},period:"2021 – 2024",type:{ar:"Hybrid",en:"Hybrid"},
-       desc:{ar:"اشتغلت على المحتوى وإدارة السوشيال وأداء الصفحات، واترقّيت 2024 لـSocial Media Manager: قيادة فريق الماركتنج والتنسيق مع قائد فريق المبيعات لمحاذاة الأهداف.",en:"Handled content, social media management, and page performance; promoted in 2024 to Social Media Manager — leading the marketing team and aligning with the sales team leader on targets."},
-       bullets:{ar:["تخطيط المحتوى وإدارة التنفيذ اليومي عبر الفروع.","قيادة فريق الماركتنج ومحاذاة الماركتنج مع أهداف المبيعات.","الحفاظ على اتساق التواصل وإدارة المجتمع."],
-                en:["Planned content and managed daily execution across branches.","Led the marketing team and aligned marketing with sales goals.","Maintained consistent brand communication & community."]},
-       media:[],videos:[]},
-      {mark:"Co",logo:"",name:{ar:"CoCafe (تابعة لـE-Spaces)",en:"CoCafe (by E-Spaces)"},role:{ar:"Social Media Specialist / Manager",en:"Social Media Specialist / Manager"},period:"2024 – 2025",type:{ar:"Hybrid · Sub-brand",en:"Hybrid · Sub-brand"},
-       desc:{ar:"براند فرعي من E-Spaces بنفس المسؤوليات بس متكيّفة مع موديل بزنس مختلف — صناعة محتوى، إدارة سوشيال، وخطط محتوى حسب البراند وسلوك العملاء.",en:"A sub-brand of E-Spaces with the same responsibilities adapted to a different business model — content creation, social media management, and content calendars tuned to the brand and its customers."},
-       bullets:{ar:["صناعة محتوى وإدارة سوشيال لموديل مختلف.","خطط محتوى محاذية لأهداف البراند وسلوك العميل.","متابعة الأداء وتعديل المحتوى."],
-                en:["Content creation & social management for a different model.","Calendars aligned with brand goals and customer behavior.","Monitored performance and adjusted content."]},
-       media:[],videos:[]},
-      {mark:"Xi",logo:"",name:{ar:"Xiaomi EG & POCO EG",en:"Xiaomi EG & POCO EG"},role:{ar:"Social Media Specialist",en:"Social Media Specialist"},period:"2019 – 2025",type:{ar:"Remote",en:"Remote"},
-       desc:{ar:"بدأت 2019 كـmarketing intern في فريق الموديريشن وكوميونيتي كوردينيتور، وبعدها أخدت مسؤولية كاملة عن إدارة الصفحات: Content Calendars، تقارير، KPIs، وتحليل منافسين.",en:"Started in 2019 as a marketing intern on the moderation team and community coordinator, then took full ownership of the pages: content calendars, reporting, KPIs, and competitor analysis."},
-       bullets:{ar:["إدارة تفاعل المستخدمين وبناء علاقة أقوى بين البراند وجمهوره.","إنشاء وتنظيم Content Calendars كاملة.","تجهيز تقارير، متابعة KPIs، وتحليل المنافسين."],
-                en:["Managed user interactions and strengthened the brand–audience bond.","Created and organized full content calendars.","Prepared reports, tracked KPIs, and ran competitor analysis."]},
-       media:[],videos:[]},
-      {mark:"SM",logo:"",name:{ar:"Space Minders Software",en:"Space Minders Software"},role:{ar:"Marketing Specialist",en:"Marketing Specialist"},period:"Sep 2024 – Feb 2025",type:{ar:"Remote",en:"Remote"},
-       desc:{ar:"دعم أنشطة التسويق الرقمي — صناعة محتوى وإدارة سوشيال — والمساهمة في تحليل السوق والتفاعل مع المجتمع.",en:"Supported digital marketing — content creation and social media management — and assisted in market analysis and community engagement."},
-       bullets:{ar:["دعم صناعة المحتوى وإدارة السوشيال ميديا.","المساهمة في تحليل السوق والتفاعل."],
-                en:["Supported content creation and social media management.","Assisted in market analysis and community engagement."]},
-       media:[],videos:[]},
-      {mark:"AL",logo:"",name:{ar:"AppLogica Middle East",en:"AppLogica Middle East"},role:{ar:"Freelance Content Creator",en:"Freelance Content Creator"},period:"Jul 2024",type:{ar:"Freelance",en:"Freelance"},
-       desc:{ar:"كتابة محتوى مبني على SEO ومواد سوشيال ميديا لحملات إقليمية.",en:"Created SEO-focused content and social media materials for regional campaigns."},
-       bullets:{ar:["محتوى SEO ومواد سوشيال لحملات المنطقة."],en:["SEO content and social materials for regional campaigns."]},
-       media:[],videos:[]},
-      {mark:"Li",logo:"",name:{ar:"Learn It",en:"Learn It"},role:{ar:"Content Creator",en:"Content Creator"},period:"Feb 2023 – Aug 2023",type:{ar:"Onsite",en:"Onsite"},
-       desc:{ar:"إنتاج محتوى تعليمي وتسويقي للطلاب وأولياء الأمور، وإدارة مجتمعات التعلّم لتحسين التفاعل.",en:"Produced educational and marketing content for students and parents, and moderated learning communities to improve engagement."},
-       bullets:{ar:["محتوى تعليمي وتسويقي للطلاب وأولياء الأمور.","إدارة مجتمعات التعلّم وتحسين التفاعل."],en:["Educational & marketing content for students and parents.","Moderated learning communities and improved engagement."]},
-       media:[],videos:[]}
-    ]
-  },
-  clients:{
-    eyebrow:{ar:"البراندات والعملاء",en:"Brands & Clients"},
-    title:{ar:"براندات ومجالات اشتغلت عليها.",en:"Brands & industries I've worked on."},
-    items:["Xiaomi","POCO","E-Spaces","CoCafe","Creativa (MCIT)","MEC Academy","Ali Alkhajeh","Learn It","Beauty & Cosmetics","Law Firms","Interior Design","Restaurant"]
-  },
-  contact:{
-    eyebrow:{ar:"تواصل",en:"Contact"},
-    title:{ar:"جاهز نتعاون؟",en:"Let's work together?"},
-    lead:{ar:"اكتب تفاصيل مشروعك أو الفرصة، وهتتبعت مباشرة على واتساب.",en:"Send your project or opportunity details — straight to WhatsApp."},
-    whatsapp:"201112435090",
-    email:"mahmodrf25@gmail.com",
-    linkedin:"https://www.linkedin.com/in/mahmod-ramdan-82a83331b/",
-    location:{ar:"الجيزة، مصر · متاح عن بُعد",en:"Giza, Egypt · Available remotely"}
-  }
-};
-
-const PALETTES = {
-  peach:{brand:"#F4600A",brand2:"#FF9248",brand3:"#FFCDA3",brand4:"#C9421A",bg:"#FFF4EC",ink:"#3A1B08"},
-  flame:{brand:"#F5333F",brand2:"#FF7A00",brand3:"#FFD23F",brand4:"#C81D2E",bg:"#FFF8EC",ink:"#2A0B0B"},
-  forest:{brand:"#159B4B",brand2:"#7CC00D",brand3:"#F5C400",brand4:"#141B14",bg:"#F4FAEC",ink:"#0C120B"},
-  ocean:{brand:"#1E6BFF",brand2:"#12A9E0",brand3:"#FFD23F",brand4:"#0B49C9",bg:"#F0F6FF",ink:"#0A1633"},
-  grape:{brand:"#8B5CF6",brand2:"#EC4899",brand3:"#FBBF24",brand4:"#22D3EE",bg:"#FAF6FF",ink:"#20112E"}
-};
-
-const UI = {
-  ar:{nav:{about:"نبذة",skills:"المهارات",experience:"الخبرات",clients:"العملاء",contact:"تواصل"},
-      dash:"لوحة التحكم",dashTitle:"لوحة التحكم",saveBtn:"💾 حفظ",exportBtn:"⬇ تنزيل الموقع",backupBtn:"نسخة JSON",importBtn:"استيراد",resetBtn:"↺ تصفير",
-      formName:"الاسم",formSubject:"الموضوع",formDetails:"تفاصيل مختصرة",formSend:"إرسال عبر واتساب",cWhats:"واتساب",cEmail:"البريد",cIn:"LinkedIn",cLoc:"الموقع",work:"شغل ومشاريع"},
-  en:{nav:{about:"About",skills:"Skills",experience:"Experience",clients:"Clients",contact:"Contact"},
-      dash:"Dashboard",dashTitle:"Dashboard",saveBtn:"💾 Save",exportBtn:"⬇ Download site",backupBtn:"JSON backup",importBtn:"Import",resetBtn:"↺ Reset",
-      formName:"Name",formSubject:"Subject",formDetails:"Brief details",formSend:"Send via WhatsApp",cWhats:"WhatsApp",cEmail:"Email",cIn:"LinkedIn",cLoc:"Location",work:"Work & projects"}
-};
-
-/* ============ STATE + HELPERS ============ */
-const KEY="mahmoud_portfolio_v1";
-let content, state={lang:"ar",unlocked:false};
-const $=s=>document.querySelector(s);
-const clone=o=>JSON.parse(JSON.stringify(o));
-const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-const escA=s=>String(s==null?"":s).replace(/"/g,"&quot;").replace(/</g,"&lt;");
-const L=o=>o?(o[state.lang]!=null?o[state.lang]:o.ar):"";
-function getP(o,p){return p.split(".").reduce((a,k)=>a==null?a:a[k],o)}
-function setP(o,p,v){const ks=p.split(".");const last=ks.pop();let t=o;for(const k of ks)t=t[k];t[last]=v}
-
-function migrate(){ /* upgrade older saved content to media[]+videos[] shape */
-  try{(content.companies&&content.companies.items||[]).forEach(co=>{
-    if(!Array.isArray(co.media)) co.media = co.media?[].concat(co.media):[];
-    co.media = co.media.filter(Boolean);
-    if(!Array.isArray(co.videos)) co.videos = (co.video?[co.video]:[]);
-    co.videos = co.videos.filter(Boolean);
-    if("video" in co) delete co.video;
-  });}catch(e){}
-}
-function boot(){
-  let saved=null; try{saved=localStorage.getItem(KEY)}catch(e){}
-  const tag=document.getElementById("content-data").textContent.trim();
-  if(saved) content=JSON.parse(saved);
-  else if(tag) content=JSON.parse(tag);
-  else content=clone(DEFAULT);
-  migrate();
-  document.getElementById("content-data").textContent=JSON.stringify(content);
-  state.lang=(content.settings&&content.settings.defaultLang)||"ar";
-  applyTheme(content.settings.theme||"coral");
-  renderAll();
-  document.getElementById("dash").classList.remove("open");
-  document.getElementById("dashOverlay").classList.remove("open");
-  state.unlocked=false;
-  syncFab();
-}
-/* Dashboard hidden for visitors — appears only with the secret #mrf99 in the URL. */
-function syncFab(){const h=(location.hash||"").toLowerCase();document.getElementById("fab").style.display=(h==="#mrf99")?"flex":"none";}
-window.addEventListener("hashchange",syncFab);
-
-function applyTheme(key){let p=PALETTES[key];if(!p){key=Object.keys(PALETTES)[0];p=PALETTES[key];}content.settings.theme=key;for(const k in p)document.documentElement.style.setProperty("--"+k,p[k]);}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(content))}catch(e){}document.getElementById("content-data").textContent=JSON.stringify(content);toast();}
-let toastT;function toast(){const t=$("#toast");t.classList.add("show");clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove("show"),1000);}
-
-/* ============ VIDEO HELPERS ============ */
-function ytid(url){if(!url)return null;let m;
-  if((m=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|v\/|live\/)|youtube\.com\/.*[?&]v=)([\w-]{11})/)))return m[1];
-  if(/^[\w-]{11}$/.test(url.trim()))return url.trim();
-  return null;}
-function vimeoid(url){if(!url)return null;const m=url.match(/vimeo\.com\/(?:video\/)?(\d+)/);return m?m[1]:null;}
-function videoCard(v){const y=ytid(v);
-  if(y)return `<div class="vitem" data-yt="${y}"><img src="https://img.youtube.com/vi/${y}/hqdefault.jpg" loading="lazy" alt=""><span class="play">▶</span></div>`;
-  const vm=vimeoid(v);
-  if(vm)return `<div class="co-vembed"><iframe src="https://player.vimeo.com/video/${vm}" allowfullscreen loading="lazy"></iframe></div>`;
-  return `<a class="vitem vlink" href="${escA(v)}" target="_blank"><span class="play">▶</span></a>`;}
-
-/* ============ RENDER ============ */
-function renderAll(){
-  document.documentElement.lang=state.lang;
-  document.documentElement.dir=state.lang==="ar"?"rtl":"ltr";
-  $("#langBtn").textContent=state.lang==="ar"?"EN":"ع";
-  $("[data-mark]").textContent=content.mark||"";
-  $("[data-brandname]").firstChild.textContent=L(content.brand)+" ";
-  $("[data-role]").textContent=L(content.role);
-  $("[data-navcta]").textContent=L(content.navcta);
-  const nav=UI[state.lang].nav;
-  $("#navLinks").innerHTML=Object.keys(nav).map(k=>`<a href="#${k}">${nav[k]}</a>`).join("");
-  $("#navLinks").querySelectorAll("a").forEach(a=>a.onclick=()=>$("#navLinks").classList.remove("open"));
-  document.querySelectorAll("[data-ui]").forEach(el=>el.textContent=UI[state.lang][el.dataset.ui]||el.textContent);
-  $("#app").innerHTML=[heroHTML(),stripHTML(),aboutHTML(),skillsHTML(),companiesHTML(),clientsHTML(),contactHTML(),footerHTML()].join("");
-  bindForm();
-}
-function photo(src,txt){return src?`<img src="${escA(src)}">`:`<div class="photo-empty">${esc(txt)}</div>`}
-function heroHTML(){const h=content.hero,c=content.contact;return `
-<section class="hero" id="home">
-  <span class="blob" style="width:210px;height:210px;background:var(--brand3);top:30px;inset-inline-end:6%"></span>
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">${esc(L(h.eyebrow))}</span>
-      <h1>${esc(L(h.title))}</h1>
-      <p class="sub">${esc(L(h.sub))}</p>
-      <div class="hero-cta">
-        <a class="btn primary" href="https://wa.me/${escA(c.whatsapp)}" target="_blank">${esc(L(h.ctaA))} →</a>
-        <a class="btn ghost" href="${escA(c.linkedin)}" target="_blank">${esc(L(h.ctaB))}</a>
-      </div>
-      <div class="hero-stats">${h.stats.map(s=>`<div class="hstat"><b>${esc(s.n)}</b><span>${esc(L(s.l))}</span></div>`).join("")}</div>
-    </div>
-    <div class="hero-art">
-      <span class="blob" style="width:150px;height:150px;background:var(--brand);bottom:-20px;inset-inline-start:-10px"></span>
-      <div class="photo-frame">${photo(h.image,state.lang==="ar"?"ارفع صورتك من لوحة التحكم":"Upload your photo from the dashboard")}</div>
-      <div class="chip t"><span class="em">📈</span><div>${state.lang==="ar"?"ROAS وصل لـ12":"ROAS up to 12"}</div></div>
-      <div class="chip b"><span class="em">🌍</span><div><small>${state.lang==="ar"?"دلوقتي":"Now"}</small>${state.lang==="ar"?"٥ حسابات في الإمارات":"5 UAE accounts"}</div></div>
-    </div>
-  </div>
-</section>`}
-function stripHTML(){const items=[...content.strip,...content.strip];return `
-<div class="strip"><div class="marq"><span>${items.map(x=>`${esc(x)} <i class="dot"></i>`).join(" ")}</span><span>${items.map(x=>`${esc(x)} <i class="dot"></i>`).join(" ")}</span></div></div>`}
-function aboutHTML(){const a=content.about;return `
-<section id="about"><div class="wrap about-grid">
-  <div class="about-photo">${photo(a.image,state.lang==="ar"?"صورة شخصية":"Profile photo")}</div>
-  <div>
-    <span class="eyebrow">${esc(L(a.eyebrow))}</span><h2 class="stitle">${esc(L(a.title))}</h2>
-    <p class="lead">${esc(L(a.body))}</p>
-    <div class="about-card" style="margin-top:22px">
-      <h4>${state.lang==="ar"?"معلومات سريعة":"Quick facts"}</h4>
-      ${a.facts.map(f=>`<div class="factline"><span class="ic">${esc(f.ic)}</span><span>${esc(L(f))}</span></div>`).join("")}
-    </div>
-  </div>
-</div></section>`}
-function skillsHTML(){const s=content.skills;return `
-<section id="skills" style="background:color-mix(in srgb,var(--brand2) 5%,var(--bg))"><div class="wrap">
-  <span class="eyebrow">${esc(L(s.eyebrow))}</span><h2 class="stitle">${esc(L(s.title))}</h2>
-  <div class="svc-grid">${s.items.map(i=>`<div class="svc"><div class="em">${esc(i.icon)}</div><h3>${esc(L(i.title))}</h3><p>${esc(L(i.desc))}</p></div>`).join("")}</div>
-  <div class="chips">${s.core.map(c=>`<span>${esc(c)}</span>`).join("")}</div>
-</div></section>`}
-function companiesHTML(){const w=content.companies,u=UI[state.lang];return `
-<section id="experience"><div class="wrap">
-  <span class="eyebrow">${esc(L(w.eyebrow))}</span><h2 class="stitle">${esc(L(w.title))}</h2>
-  ${w.items.map(co=>{
-    const bullets=(co.bullets&&co.bullets[state.lang])||(co.bullets&&co.bullets.ar)||[];
-    const media=(co.media||[]).filter(Boolean);
-    const videos=(co.videos||[]).filter(Boolean);
-    const hasWork=media.length||videos.length;
-    return `<div class="co">
-      <div class="co-top">
-        <div class="co-logo">${co.logo?`<img src="${escA(co.logo)}" alt="${escA(L(co.name))} logo">`:esc(co.mark||"")}</div>
-        <div>
-          <div class="co-head"><h3>${esc(L(co.name))}</h3><span class="co-role">${esc(L(co.role))}</span></div>
-          <div class="co-meta"><span>${esc(co.period||"")}</span><span>${esc(L(co.type))}</span></div>
-          <p class="desc">${esc(L(co.desc))}</p>
-          <ul>${bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul>
-        </div>
-      </div>
-      ${hasWork?`<div class="co-work"><h4>${esc(u.work)}</h4>
-        ${media.length?`<div class="co-gallery">${media.map(m=>`<button class="gitem"><img src="${escA(m)}" loading="lazy" alt="${escA(L(co.name))}"></button>`).join("")}</div>`:""}
-        ${videos.length?`<div class="co-videos">${videos.map(videoCard).join("")}</div>`:""}
-      </div>`:""}
-    </div>`}).join("")}
-</div></section>`}
-function clientsHTML(){const c=content.clients;return `
-<section id="clients" style="background:color-mix(in srgb,var(--brand) 5%,var(--bg))"><div class="wrap">
-  <span class="eyebrow">${esc(L(c.eyebrow))}</span><h2 class="stitle">${esc(L(c.title))}</h2>
-  <div class="cl-grid">${c.items.map(i=>`<div class="cl"><span class="d"></span>${esc(i)}</div>`).join("")}</div>
-</div></section>`}
-function contactHTML(){const c=content.contact,u=UI[state.lang];return `
-<section id="contact"><div class="wrap"><div class="cta-band">
-  <span class="blob" style="width:200px;height:200px;background:#fff;opacity:.12;top:-40px;inset-inline-end:-30px"></span>
-  <div class="cta-grid">
-    <div>
-      <span class="eyebrow">${esc(L(c.eyebrow))}</span><h2 class="stitle">${esc(L(c.title))}</h2><p class="lead">${esc(L(c.lead))}</p>
-      <div class="cinfo">
-        <a href="https://wa.me/${escA(c.whatsapp)}" target="_blank"><span class="ic">💬</span><span><small>${u.cWhats}</small><span class="en" dir="ltr">+${esc(c.whatsapp)}</span></span></a>
-        <a href="mailto:${escA(c.email)}"><span class="ic">✉️</span><span><small>${u.cEmail}</small><span class="en" dir="ltr">${esc(c.email)}</span></span></a>
-        <a href="${escA(c.linkedin)}" target="_blank"><span class="ic">in</span><span><small>${u.cIn}</small>${state.lang==="ar"?"الملف الشخصي":"Profile"}</span></a>
-        <div><span class="ic">📍</span><span><small>${u.cLoc}</small>${esc(L(c.location))}</span></div>
-      </div>
-    </div>
-    <form class="cform" id="waForm">
-      <div class="field"><label>${u.formName}</label><input name="name" required></div>
-      <div class="field"><label>${u.formSubject}</label><input name="subject"></div>
-      <div class="field"><label>${u.formDetails}</label><textarea name="details"></textarea></div>
-      <button class="btn primary" type="submit">${u.formSend} →</button>
-    </form>
-  </div>
-</div></div></section>`}
-function footerHTML(){return `<footer><div class="wrap"><div class="brand" style="display:inline-flex"><span class="mark">${esc(content.mark)}</span><span>${esc(L(content.brand))}<small>${esc(L(content.role))}</small></span></div><p>© 2026 ${esc(L(content.brand))}</p></div></footer>`}
-function bindForm(){const f=$("#waForm");if(!f)return;f.addEventListener("submit",e=>{e.preventDefault();const c=content.contact,u=UI[state.lang];
-  const msg=`${state.lang==="ar"?"السلام عليكم محمود 👋":"Hello Mahmoud 👋"}%0A%0A*${u.formName}:* ${encodeURIComponent(f.name.value)}%0A*${u.formSubject}:* ${encodeURIComponent(f.subject.value)}%0A*${u.formDetails}:* ${encodeURIComponent(f.details.value)}`;
-  window.open(`https://wa.me/${c.whatsapp}?text=${msg}`,"_blank");});}
-
-/* ============ SITE INTERACTIONS (gallery + video) ============ */
-document.addEventListener("click",e=>{
-  const g=e.target.closest(".gitem"); if(g){const im=g.querySelector("img"); if(im){$("#lightbox").querySelector("img").src=im.src;$("#lightbox").classList.add("open");} return;}
-  const v=e.target.closest(".vitem"); if(v&&v.dataset.yt){v.innerHTML=`<iframe src="https://www.youtube-nocookie.com/embed/${v.dataset.yt}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;return;}
-});
-$("#lightbox").onclick=()=>$("#lightbox").classList.remove("open");
-
-/* ============ DASHBOARD (EDITOR) ============ */
-function bi(label,path,multi){const v=getP(content,path)||{ar:"",en:""};
-  const inp=l=>multi?`<textarea data-path="${path}.${l}">${esc(v[l])}</textarea>`:`<input data-path="${path}.${l}" value="${escA(v[l])}">`;
-  return `<div class="frow"><label>${esc(label)}</label><div class="bi"><span>ع</span>${inp("ar")}</div><div class="bi"><span>EN</span>${inp("en")}</div></div>`}
-function tx(label,path,ph){return `<div class="frow"><label>${esc(label)}</label><input data-path="${path}" value="${escA(getP(content,path))}" placeholder="${escA(ph||"")}"></div>`}
-function listField(label,path){const v=getP(content,path)||{ar:[],en:[]};
-  const ta=l=>`<textarea data-list="${path}.${l}" rows="3">${esc((v[l]||[]).join("\n"))}</textarea>`;
-  return `<div class="frow"><label>${esc(label)} <span style="color:var(--muted);font-weight:600">(${state.lang==="ar"?"سطر لكل نقطة":"one per line"})</span></label><div class="bi"><span>ع</span>${ta("ar")}</div><div class="bi"><span>EN</span>${ta("en")}</div></div>`}
-function img(label,path){const v=getP(content,path);return `<div class="frow"><label>${esc(label)}</label>${v?`<img class="thumb" src="${escA(v)}"><button type="button" class="mini-clear" data-clear="${path}">✕ ${state.lang==="ar"?"حذف":"Remove"}</button>`:""}<input type="file" accept="image/*" data-file="${path}"></div>`}
-function galleryEditor(i){const arr=getP(content,`companies.items.${i}.media`)||[];
-  let h=`<div class="frow"><label>${state.lang==="ar"?"صور المشروع (اضغط ✕ للحذف)":"Project images (✕ to delete)"}</label>`;
-  if(arr.length)h+=`<div class="ed-gal">`+arr.map((m,j)=>`<div class="ed-thumb"><img src="${escA(m)}"><button type="button" class="del" data-del="companies.items.${i}.media" data-i="${j}">✕</button></div>`).join("")+`</div>`;
-  h+=`<input type="file" accept="image/*" data-fileadd="companies.items.${i}.media"></div>`;return h;}
-function videosEditor(i){const arr=getP(content,`companies.items.${i}.videos`)||[];
-  let h=`<div class="frow"><label>${state.lang==="ar"?"فيديوهات (روابط YouTube/Vimeo)":"Videos (YouTube/Vimeo links)"}</label>`;
-  h+=arr.map((v,j)=>`<div class="ed-vrow"><input data-path="companies.items.${i}.videos.${j}" value="${escA(v)}" placeholder="https://youtube.com/watch?v=..."><button type="button" class="del" data-del="companies.items.${i}.videos" data-i="${j}">✕</button></div>`).join("");
-  h+=`<button type="button" class="addbtn" data-add="companies.items.${i}.videos" data-kind="video">+ ${state.lang==="ar"?"إضافة فيديو":"Add video"}</button></div>`;return h;}
-function acc(title,inner,open){return `<div class="acc${open?" open":""}"><button type="button" class="acc-t">${esc(title)}<span class="ca">▾</span></button><div class="inner">${inner}</div></div>`}
-
-function renderEditor(){
-  let settings=`<div class="hint">${state.lang==="ar"?"عدّل لايف. ارفع لوجو وصور كل شركة، وامسح أي صورة بالـ✕. اضغط حفظ، وللنشر اضغط تنزيل الموقع.":"Edit live. Upload logos & images per company; delete any with ✕. Save, then Download site to publish."}</div>`;
-  settings+=bi(state.lang==="ar"?"الاسم":"Name","brand")+tx(state.lang==="ar"?"شعار (حرفين)":"Logo (2 letters)","mark")+bi(state.lang==="ar"?"المسمى":"Role","role")+bi(state.lang==="ar"?"زر التواصل":"CTA","navcta");
-  settings+=`<div class="frow"><label>${state.lang==="ar"?"اللغة الافتراضية":"Default language"}</label><select data-path="settings.defaultLang"><option value="ar"${content.settings.defaultLang==="ar"?" selected":""}>العربية</option><option value="en"${content.settings.defaultLang==="en"?" selected":""}>English</option></select></div>`;
-  settings+=`<div class="frow"><label>${state.lang==="ar"?"لون الموقع":"Color theme"}</label><div class="pal-row">${Object.keys(PALETTES).map(k=>{const p=PALETTES[k];return `<div class="pal${content.settings.theme===k?" sel":""}" data-pal="${k}" style="background:linear-gradient(135deg,${p.brand},${p.brand2})"></div>`}).join("")}</div></div>`;
-  settings+=`<div class="frow"><label>${state.lang==="ar"?"كلمة سر الداشبورد (اختياري)":"Passcode (optional)"}</label><input data-path="settings.passcode" value="${escA(content.settings.passcode)}" placeholder="${state.lang==="ar"?"فاضية = مفتوحة":"empty = open"}"></div>`;
-
-  let hero=bi(state.lang==="ar"?"العنوان":"Headline","hero.title",true)+bi(state.lang==="ar"?"الوصف":"Subheadline","hero.sub",true)+img(state.lang==="ar"?"الصورة الشخصية":"Profile photo","hero.image");
-  hero+=`<div class="rep-item"><div class="lbl">${state.lang==="ar"?"الأرقام":"Stats"}</div>`+content.hero.stats.map((s,i)=>tx((state.lang==="ar"?"رقم ":"Stat ")+(i+1),`hero.stats.${i}.n`)+bi("↳",`hero.stats.${i}.l`)).join("")+`</div>`;
-
-  let about=bi(state.lang==="ar"?"العنوان":"Title","about.title",true)+bi(state.lang==="ar"?"النبذة":"Body","about.body",true)+img(state.lang==="ar"?"صورة":"Photo","about.image");
-
-  let skills=content.skills.items.map((it,i)=>`<div class="rep-item"><div class="lbl">${state.lang==="ar"?"مهارة":"Skill"} ${i+1}</div>${tx("Icon",`skills.items.${i}.icon`)}${bi(state.lang==="ar"?"العنوان":"Title",`skills.items.${i}.title`)}${bi(state.lang==="ar"?"الوصف":"Desc",`skills.items.${i}.desc`,true)}</div>`).join("");
-
-  let comp=rep("companies.items","company",(co,i)=>
-     img(state.lang==="ar"?"لوجو الشركة (PNG)":"Company logo (PNG)",`companies.items.${i}.logo`)
-    +tx(state.lang==="ar"?"شعار بديل (حروف)":"Fallback initials",`companies.items.${i}.mark`)
-    +bi(state.lang==="ar"?"اسم الشركة":"Company name",`companies.items.${i}.name`)
-    +bi(state.lang==="ar"?"الدور":"Role",`companies.items.${i}.role`)
-    +tx(state.lang==="ar"?"الفترة":"Period",`companies.items.${i}.period`)
-    +bi(state.lang==="ar"?"النوع":"Type",`companies.items.${i}.type`)
-    +bi(state.lang==="ar"?"الوصف":"Description",`companies.items.${i}.desc`,true)
-    +listField(state.lang==="ar"?"النقاط":"Bullets",`companies.items.${i}.bullets`)
-    +galleryEditor(i)+videosEditor(i));
-
-  let cont=tx(UI[state.lang].cWhats+" (2010...)","contact.whatsapp")+tx(UI[state.lang].cEmail,"contact.email")+tx(UI[state.lang].cIn,"contact.linkedin")+bi(UI[state.lang].cLoc,"contact.location");
-
-  $("#dashBody").innerHTML=[
-    acc(state.lang==="ar"?"⚙️ الإعدادات والألوان":"⚙️ Settings & colors",settings,true),
-    acc(state.lang==="ar"?"🚀 الهيرو":"🚀 Hero",hero),
-    acc(state.lang==="ar"?"👤 نبذة":"👤 About",about),
-    acc(state.lang==="ar"?"🧩 المهارات":"🧩 Skills",skills),
-    acc(state.lang==="ar"?"💼 الشركات (لوجو + صور + فيديو)":"💼 Companies (logo + media)",comp),
-    acc(state.lang==="ar"?"📞 التواصل":"📞 Contact",cont)
-  ].join("");
-}
-function rep(arrPath,kind,itemFn){const arr=getP(content,arrPath)||[];
-  return arr.map((it,i)=>`<div class="rep-item"><div class="rep-tools"><button type="button" class="mv" data-move="up" data-arr="${arrPath}" data-i="${i}"${i===0?" disabled":""}>▲</button><button type="button" class="mv" data-move="down" data-arr="${arrPath}" data-i="${i}"${i===arr.length-1?" disabled":""}>▼</button><button type="button" class="del" data-del="${arrPath}" data-i="${i}">✕</button></div><div class="lbl">#${i+1}</div>${itemFn(it,i)}</div>`).join("")
-    +`<button type="button" class="addbtn" data-add="${arrPath}" data-kind="${kind}">+ ${state.lang==="ar"?"إضافة شركة":"Add company"}</button>`}
-const BLANKS={
-  company:()=>({mark:"NEW",logo:"",name:{ar:"شركة جديدة",en:"New company"},role:{ar:"الدور",en:"Role"},period:"2025",type:{ar:"",en:""},desc:{ar:"",en:""},bullets:{ar:[],en:[]},media:[],videos:[]}),
-  video:()=>""
-};
-
-/* ============ EVENTS ============ */
-function openDash(){
-  if(content.settings.passcode && !state.unlocked){const p=prompt(state.lang==="ar"?"كلمة سر الداشبورد:":"Passcode:");if(p!==content.settings.passcode)return;state.unlocked=true;}
-  renderEditor();$("#dash").classList.add("open");$("#dashOverlay").classList.add("open");
-}
-function closeDash(){$("#dash").classList.remove("open");$("#dashOverlay").classList.remove("open")}
-$("#fab").onclick=openDash;$("#dashClose").onclick=closeDash;$("#dashOverlay").onclick=closeDash;
-$("#langBtn").onclick=()=>{state.lang=state.lang==="ar"?"en":"ar";renderAll();if($("#dash").classList.contains("open"))renderEditor();};
-$("#menuBtn").onclick=()=>$("#navLinks").classList.toggle("open");
-
-const body=$("#dashBody");
-body.addEventListener("input",e=>{const el=e.target;
-  if(el.dataset.list){setP(content,el.dataset.list,el.value.split("\n").map(s=>s.trim()).filter(Boolean));renderAll();save();return;}
-  const p=el.dataset.path;if(!p)return;setP(content,p,el.value);renderAll();save();});
-body.addEventListener("change",e=>{const el=e.target;
-  if(el.dataset.file&&el.files&&el.files[0]){const r=new FileReader();r.onload=()=>{setP(content,el.dataset.file,r.result);save();renderAll();renderEditor();};r.readAsDataURL(el.files[0]);return;}
-  if(el.dataset.fileadd&&el.files&&el.files[0]){const r=new FileReader();r.onload=()=>{const arr=getP(content,el.dataset.fileadd);arr.push(r.result);save();renderAll();renderEditor();};r.readAsDataURL(el.files[0]);return;}
-});
-body.addEventListener("click",e=>{
-  const t=e.target.closest(".acc-t");if(t){t.parentElement.classList.toggle("open");return;}
-  const pal=e.target.closest("[data-pal]");if(pal){applyTheme(pal.dataset.pal);save();renderEditor();return;}
-  const clr=e.target.closest("[data-clear]");if(clr){setP(content,clr.dataset.clear,"");save();renderAll();renderEditor();return;}
-  const add=e.target.closest("[data-add]");if(add){const b=BLANKS[add.dataset.kind]?BLANKS[add.dataset.kind]():"";getP(content,add.dataset.add).push(b);save();renderEditor();renderAll();return;}
-  const mv=e.target.closest("[data-move]");if(mv){const arr=getP(content,mv.dataset.arr),i=+mv.dataset.i,j=mv.dataset.move==="up"?i-1:i+1;if(j>=0&&j<arr.length){const tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;save();renderEditor();renderAll();}return;}
-  const del=e.target.closest("[data-del]");if(del){getP(content,del.dataset.del).splice(+del.dataset.i,1);save();renderEditor();renderAll();return;}
-});
-$("#dbSave").onclick=()=>{save();closeDash();};
-$("#dbReset").onclick=()=>{if(confirm(state.lang==="ar"?"ترجع للنسخة الأصلية؟ هيتمسح تعديلك.":"Reset to default? Edits will be lost.")){content=clone(DEFAULT);migrate();applyTheme(content.settings.theme);save();renderAll();renderEditor();}};
-$("#dbExport").onclick=()=>{closeDash();document.getElementById("fab").style.display="none";document.getElementById("content-data").textContent=JSON.stringify(content);const html="<!DOCTYPE html>\n"+document.documentElement.outerHTML;downloadFile("index.html",html,"text/html");syncFab();};
-$("#dbJson").onclick=()=>downloadFile("mahmoud-portfolio-content.json",JSON.stringify(content,null,2),"application/json");
-$("#dbImport").onclick=()=>$("#jsonInput").click();
-$("#jsonInput").onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{content=JSON.parse(r.result);migrate();applyTheme(content.settings.theme||"coral");save();renderAll();renderEditor();}catch(err){alert("Invalid JSON")}};r.readAsText(f);};
-function downloadFile(name,data,type){const b=new Blob([data],{type});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download=name;a.click();URL.revokeObjectURL(u);}
-
-boot();
-</script>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mahmoud Ramadan | Digital Marketing Specialist</title><meta name="description" content="From the brief to the dashboard, I handle the full marketing cycle. Digital Marketing Specialist, 6+ years, Egypt &amp; UAE."><meta name="theme-color" content="#0a0a0b"><meta property="og:type" content="website"><meta property="og:title" content="Mahmoud Ramadan | Digital Marketing Specialist"><meta property="og:description" content="From the brief to the dashboard, I handle the full marketing cycle. Digital Marketing Specialist, 6+ years, Egypt &amp; UAE."><meta property="og:image" content="https://mahmod-ramdan.github.io/portfolio/_assets/portrait-square.BtJSSJW0_ZD76ED.jpg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg"><script data-astro-rerun>
+      document.documentElement.classList.add('js');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-motion');
+      }
+    </script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/portfolio/_assets/ClientRouter.astro_astro_type_script_index_0_lang.CnDxeVtR.js"></script><link rel="stylesheet" href="/portfolio/_assets/Base.I1ZdDIhq.css"><link rel="stylesheet" href="/portfolio/_assets/index.DHpbocv-.css"><style>.stages[data-astro-cid-x3t7qvpz]{flex-wrap:wrap;gap:8px;display:flex}.stage[data-astro-cid-x3t7qvpz]{isolation:isolate;border:1.5px solid var(--line);color:var(--text-muted);white-space:nowrap;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:500;line-height:1.2;position:relative;overflow:hidden}.stages--sm[data-astro-cid-x3t7qvpz] .stage[data-astro-cid-x3t7qvpz]{padding:5px 11px;font-size:12px}.stage[data-astro-cid-x3t7qvpz].is-lit{border-color:var(--accent);color:var(--accent-ink)}.stage__fill[data-astro-cid-x3t7qvpz]{z-index:-1;background:var(--accent);position:absolute;inset:0}.stage[data-astro-cid-x3t7qvpz]:not(.is-lit) .stage__fill[data-astro-cid-x3t7qvpz]{display:none}html.js-motion .stage[data-astro-cid-x3t7qvpz].is-lit .stage__fill[data-astro-cid-x3t7qvpz]{transform:scaleX(0)}html.js-motion .stage[data-astro-cid-x3t7qvpz].is-lit .stage__label[data-astro-cid-x3t7qvpz]{color:var(--text)}.sr[data-astro-cid-x3t7qvpz]{clip:rect(0 0 0 0);white-space:nowrap;width:1px;height:1px;position:absolute;overflow:hidden}
+</style><style>[data-astro-transition-scope="astro-tfihvs6n-1"] { view-transition-name: company-mec-academy; }@layer astro { ::view-transition-old(company-mec-academy) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(company-mec-academy) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(company-mec-academy) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(company-mec-academy) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-1"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-tfihvs6n-2"] { view-transition-name: company-programming-tutor; }@layer astro { ::view-transition-old(company-programming-tutor) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(company-programming-tutor) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(company-programming-tutor) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(company-programming-tutor) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-2"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-2"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-2"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-2"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-tfihvs6n-3"] { view-transition-name: company-creativa; }@layer astro { ::view-transition-old(company-creativa) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(company-creativa) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(company-creativa) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(company-creativa) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-3"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-3"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-3"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-3"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style><style>[data-astro-transition-scope="astro-tfihvs6n-4"] { view-transition-name: company-e-spaces; }@layer astro { ::view-transition-old(company-e-spaces) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(company-e-spaces) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(company-e-spaces) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(company-e-spaces) { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-4"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-4"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-tfihvs6n-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-tfihvs6n-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-tfihvs6n-4"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-tfihvs6n-4"] { 
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head><body><a class="skip" href="#main">Skip to content</a><header data-astro-transition-persist="nav" class="nav" data-nav data-astro-cid-wpvy4v7s><div class="nav__bar wrap" data-astro-cid-wpvy4v7s><a href="/portfolio/" class="nav__home" aria-label="Mahmoud Ramadan, home" data-astro-cid-wpvy4v7s><span class="display" data-astro-cid-wpvy4v7s>MR</span></a><nav aria-label="Main" data-astro-cid-wpvy4v7s><ul class="nav__links" data-astro-cid-wpvy4v7s><li data-astro-cid-wpvy4v7s><a class="link" href="/portfolio/work" data-astro-cid-wpvy4v7s>Work</a></li><li data-astro-cid-wpvy4v7s><a class="link" href="/portfolio/#how" data-astro-cid-wpvy4v7s>How I work</a></li><li data-astro-cid-wpvy4v7s><a class="link" href="/portfolio/#experience" data-astro-cid-wpvy4v7s>Experience</a></li><li data-astro-cid-wpvy4v7s><a class="link" href="/portfolio/#contact" data-astro-cid-wpvy4v7s>Contact</a></li></ul></nav><div class="nav__end" data-astro-cid-wpvy4v7s><button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" data-menu-toggle data-astro-cid-wpvy4v7s><span class="sr" data-astro-cid-wpvy4v7s>Menu</span><span class="nav__burger" aria-hidden="true" data-astro-cid-wpvy4v7s><i data-astro-cid-wpvy4v7s></i><i data-astro-cid-wpvy4v7s></i></span></button></div></div><div class="menu" id="menu" data-menu hidden data-astro-cid-wpvy4v7s><ul class="menu__links wrap" data-astro-cid-wpvy4v7s><li class="line" data-astro-cid-wpvy4v7s><a class="display" href="/portfolio/" data-menu-link data-astro-cid-wpvy4v7s><span data-astro-cid-wpvy4v7s>Home</span></a></li><li class="line" data-astro-cid-wpvy4v7s><a class="display" href="/portfolio/work" data-menu-link data-astro-cid-wpvy4v7s><span data-astro-cid-wpvy4v7s>Work</span></a></li><li class="line" data-astro-cid-wpvy4v7s><a class="display" href="/portfolio/#how" data-menu-link data-astro-cid-wpvy4v7s><span data-astro-cid-wpvy4v7s>How I work</span></a></li><li class="line" data-astro-cid-wpvy4v7s><a class="display" href="/portfolio/#experience" data-menu-link data-astro-cid-wpvy4v7s><span data-astro-cid-wpvy4v7s>Experience</span></a></li><li class="line" data-astro-cid-wpvy4v7s><a class="display" href="/portfolio/#contact" data-menu-link data-astro-cid-wpvy4v7s><span data-astro-cid-wpvy4v7s>Contact</span></a></li></ul><div class="menu__foot wrap" data-astro-cid-wpvy4v7s><a class="link" href="mailto:mahmodrf25@gmail.com" data-astro-cid-wpvy4v7s>mahmodrf25@gmail.com</a></div></div></header><main id="main"><section class="hero" data-hero aria-labelledby="hero-name" data-astro-cid-ge2uvauf><div class="hero__photo" data-hero-photo data-astro-cid-ge2uvauf><img src="/portfolio/_assets/portrait-hero-tall.CGjPVPcr_Z2bPbMU.webp" srcset="/portfolio/_assets/portrait-hero-tall.CGjPVPcr_jJTmB.webp 480w, /portfolio/_assets/portrait-hero-tall.CGjPVPcr_Z2bPbMU.webp 704w" alt="Mahmoud Ramadan, black and white portrait" sizes="(max-width: 860px) 100vw, 44vw" loading="eager" fetchpriority="high" data-astro-cid-ge2uvauf="true" decoding="async" width="704" height="1300"></div><div class="hero__inner wrap" data-astro-cid-ge2uvauf><div class="hero__copy" data-astro-cid-ge2uvauf><p class="hero__line" data-hero-line data-astro-cid-ge2uvauf><span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>From</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>the</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>brief</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>to</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>the</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>dashboard,</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>I</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>handle</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>the</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>full</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>marketing</span></span> <span class="wm" data-astro-cid-ge2uvauf><span class="w" data-astro-cid-ge2uvauf>cycle.</span></span></p><ul class="hero__facts" data-hero-fade data-astro-cid-ge2uvauf><li class="pill" data-astro-cid-ge2uvauf>Digital Marketing Specialist</li><li class="pill" data-astro-cid-ge2uvauf>6+ years</li><li class="pill" data-astro-cid-ge2uvauf>Egypt &amp; UAE</li></ul><div class="hero__cta" data-hero-fade data-astro-cid-ge2uvauf><a class="btn btn--primary" href="/portfolio/#work" data-astro-cid-ge2uvauf>View my work</a></div></div><h1 class="hero__name display" id="hero-name" data-hero-name data-astro-cid-ge2uvauf><span class="line" data-astro-cid-ge2uvauf><span data-astro-cid-ge2uvauf>Mahmoud</span></span><span class="line" data-astro-cid-ge2uvauf><span data-astro-cid-ge2uvauf>Ramadan</span></span></h1></div><div class="hero__cue" data-hero-cue aria-hidden="true" data-astro-cid-ge2uvauf><span data-astro-cid-ge2uvauf>Scroll</span><i data-astro-cid-ge2uvauf></i></div></section><section class="proof wrap" aria-label="Results at a glance" data-astro-cid-kur57igv><ul class="proof__list" data-reveal-group data-astro-cid-kur57igv><li data-reveal data-astro-cid-kur57igv><a class="proof__item" href="/portfolio/work/mec-academy" data-astro-cid-kur57igv><span class="proof__num num" data-astro-cid-kur57igv><span class="proof__fix" data-astro-cid-kur57igv>EGP </span><span data-count="1.2" data-decimals="1" data-astro-cid-kur57igv>1.2</span><span class="proof__fix" data-astro-cid-kur57igv>M+</span></span><span class="proof__label" data-astro-cid-kur57igv>in sales in 3 months</span><span class="proof__src" data-astro-cid-kur57igv>MEC Academy</span></a></li><li data-reveal data-astro-cid-kur57igv><a class="proof__item" href="/portfolio/work/creativa" data-astro-cid-kur57igv><span class="proof__num num" data-astro-cid-kur57igv><span data-count="10" data-decimals="0" data-astro-cid-kur57igv>10</span><span class="proof__fix" data-astro-cid-kur57igv>K+</span></span><span class="proof__label" data-astro-cid-kur57igv>followers from zero, mostly organic</span><span class="proof__src" data-astro-cid-kur57igv>Creativa</span></a></li><li data-reveal data-astro-cid-kur57igv><a class="proof__item" href="/portfolio/work/e-spaces" data-astro-cid-kur57igv><span class="proof__num num" data-astro-cid-kur57igv><span class="proof__fix" data-astro-cid-kur57igv>1 → </span><span data-count="8" data-decimals="0" data-astro-cid-kur57igv>8</span></span><span class="proof__label" data-astro-cid-kur57igv>from first social hire to a team of 8</span><span class="proof__src" data-astro-cid-kur57igv>E-Spaces</span></a></li><li data-reveal data-astro-cid-kur57igv><a class="proof__item" href="/portfolio/work/ali-alkhajeh" data-astro-cid-kur57igv><span class="proof__num num" data-astro-cid-kur57igv><span data-count="7" data-decimals="0" data-astro-cid-kur57igv>7</span></span><span class="proof__label" data-astro-cid-kur57igv>UAE clients handled directly</span><span class="proof__src" data-astro-cid-kur57igv>Ali Alkhajeh Marketing</span></a></li><li data-reveal data-astro-cid-kur57igv><a class="proof__item" href="/portfolio/work/xiaomi-poco" data-astro-cid-kur57igv><span class="proof__num num" data-astro-cid-kur57igv><span data-count="500" data-decimals="0" data-astro-cid-kur57igv>500</span><span class="proof__fix" data-astro-cid-kur57igv>+</span></span><span class="proof__label" data-astro-cid-kur57igv>messages per shift, 100% response rate</span><span class="proof__src" data-astro-cid-kur57igv>Xiaomi</span></a></li></ul></section><section class="section wrap" id="work" aria-labelledby="work-title" data-astro-cid-lcdefpme><h2 id="work-title" data-reveal-lines="true" class="giant"><span class="line"><span>Selected</span></span><span class="line"><span>work</span></span></h2><div class="wl" data-hover-list data-astro-cid-5bpsg6b4><ul class="wl__rows" data-astro-cid-5bpsg6b4><li data-reveal data-astro-cid-5bpsg6b4><a class="wl__row" href="/portfolio/work/mec-academy" data-row data-astro-cid-5bpsg6b4><span class="wl__thumb" aria-hidden="true" data-astro-cid-5bpsg6b4><img src="/portfolio/_assets/mec-ads-3.B2SAqAVo_1TELa8.webp" srcset="/portfolio/_assets/mec-ads-3.B2SAqAVo_cPIxy.webp 480w, /portfolio/_assets/mec-ads-3.B2SAqAVo_Z1Chk4c.webp 800w" alt sizes="100vw" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="957" height="302"></span><span data-astro-transition-scope="astro-tfihvs6n-1" class="wl__company display" data-astro-cid-5bpsg6b4>MEC Academy</span><span class="wl__body" data-astro-cid-5bpsg6b4><span class="wl__headline" data-astro-cid-5bpsg6b4>From near-closure to EGP 1.2M+ in sales in 3 months.</span><span class="wl__meta" data-astro-cid-5bpsg6b4><span class="pill pill--muted" data-astro-cid-5bpsg6b4>EdTech</span><ul class="stages stages--sm" aria-label="Stages of the marketing cycle used here" data-astro-cid-x3t7qvpz><li class="stage" data-astro-cid-x3t7qvpz>Research</li><li class="stage" data-astro-cid-x3t7qvpz>Positioning</li><li class="stage" data-astro-cid-x3t7qvpz>Content</li><li class="stage" data-astro-cid-x3t7qvpz>Media buying</li><li class="stage" data-astro-cid-x3t7qvpz>Analysis</li><li class="stage" data-astro-cid-x3t7qvpz>Client &amp; team</li></ul></span></span></a></li><li data-reveal data-astro-cid-5bpsg6b4><a class="wl__row" href="/portfolio/work/programming-tutor" data-row data-astro-cid-5bpsg6b4><span class="wl__thumb" aria-hidden="true" data-astro-cid-5bpsg6b4><img src="/portfolio/_assets/content-system-funnel-and-buckets.De1XG2VP_Z2ocwaV.webp" srcset="/portfolio/_assets/content-system-funnel-and-buckets.De1XG2VP_ZvUtvm.webp 480w, /portfolio/_assets/content-system-funnel-and-buckets.De1XG2VP_Z2d4JLa.webp 800w" alt sizes="100vw" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="1224" height="1584"></span><span data-astro-transition-scope="astro-tfihvs6n-2" class="wl__company display" data-astro-cid-5bpsg6b4>Programming &amp; AI Tutor</span><span class="wl__body" data-astro-cid-5bpsg6b4><span class="wl__headline" data-astro-cid-5bpsg6b4>An unknown teacher, a late start, a crowded market. 10+ students in one month.</span><span class="wl__meta" data-astro-cid-5bpsg6b4><span class="pill pill--muted" data-astro-cid-5bpsg6b4>EdTech</span><ul class="stages stages--sm" aria-label="Stages of the marketing cycle used here" data-astro-cid-x3t7qvpz><li class="stage" data-astro-cid-x3t7qvpz>Research</li><li class="stage" data-astro-cid-x3t7qvpz>Positioning</li><li class="stage" data-astro-cid-x3t7qvpz>Content</li><li class="stage" data-astro-cid-x3t7qvpz>Client &amp; team</li></ul></span></span></a></li><li data-reveal data-astro-cid-5bpsg6b4><a class="wl__row" href="/portfolio/work/creativa" data-row data-astro-cid-5bpsg6b4><span class="wl__thumb" aria-hidden="true" data-astro-cid-5bpsg6b4><img src="/portfolio/_assets/creativa-hackathon.CqWcfR3x_17idgH.webp" srcset="/portfolio/_assets/creativa-hackathon.CqWcfR3x_ZSjo9f.webp 480w, /portfolio/_assets/creativa-hackathon.CqWcfR3x_2rqIqC.webp 800w" alt sizes="100vw" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="1288" height="663"></span><span data-astro-transition-scope="astro-tfihvs6n-3" class="wl__company display" data-astro-cid-5bpsg6b4>Creativa Hub Zagazig</span><span class="wl__body" data-astro-cid-5bpsg6b4><span class="wl__headline" data-astro-cid-5bpsg6b4>A new government-backed tech hub. From zero to 10K+ followers in under a year, mostly organic.</span><span class="wl__meta" data-astro-cid-5bpsg6b4><span class="pill pill--muted" data-astro-cid-5bpsg6b4>EdTech</span><ul class="stages stages--sm" aria-label="Stages of the marketing cycle used here" data-astro-cid-x3t7qvpz><li class="stage" data-astro-cid-x3t7qvpz>Content</li><li class="stage" data-astro-cid-x3t7qvpz>Media buying</li><li class="stage" data-astro-cid-x3t7qvpz>Analysis</li><li class="stage" data-astro-cid-x3t7qvpz>Client &amp; team</li></ul></span></span></a></li><li data-reveal data-astro-cid-5bpsg6b4><a class="wl__row" href="/portfolio/work/e-spaces" data-row data-astro-cid-5bpsg6b4><span class="wl__thumb" aria-hidden="true" data-astro-cid-5bpsg6b4><img src="/portfolio/_assets/cocafe-working-coffee-lovers.xRgdLdsB_1YGODg.webp" srcset="/portfolio/_assets/cocafe-working-coffee-lovers.xRgdLdsB_Z2dTuDH.webp 480w, /portfolio/_assets/cocafe-working-coffee-lovers.xRgdLdsB_1YGODg.webp 578w" alt sizes="100vw" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="578" height="934"></span><span data-astro-transition-scope="astro-tfihvs6n-4" class="wl__company display" data-astro-cid-5bpsg6b4>E-Spaces &amp; CoCafe</span><span class="wl__body" data-astro-cid-5bpsg6b4><span class="wl__headline" data-astro-cid-5bpsg6b4>First hire on a new social team. Later, leading a team of 8.</span><span class="wl__meta" data-astro-cid-5bpsg6b4><span class="pill pill--muted" data-astro-cid-5bpsg6b4>B2B</span><ul class="stages stages--sm" aria-label="Stages of the marketing cycle used here" data-astro-cid-x3t7qvpz><li class="stage" data-astro-cid-x3t7qvpz>Research</li><li class="stage" data-astro-cid-x3t7qvpz>Content</li><li class="stage" data-astro-cid-x3t7qvpz>Client &amp; team</li></ul></span></span></a></li></ul><div class="wl__preview" data-preview aria-hidden="true" data-astro-cid-5bpsg6b4><img src="/portfolio/_assets/mec-ads-3.B2SAqAVo_1TELa8.webp" srcset="/portfolio/_assets/mec-ads-3.B2SAqAVo_cPIxy.webp 480w" alt sizes="380px" data-preview-img="true" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="957" height="302"><img src="/portfolio/_assets/content-system-funnel-and-buckets.De1XG2VP_Z2ocwaV.webp" srcset="/portfolio/_assets/content-system-funnel-and-buckets.De1XG2VP_ZvUtvm.webp 480w" alt sizes="380px" data-preview-img="true" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="1224" height="1584"><img src="/portfolio/_assets/creativa-hackathon.CqWcfR3x_17idgH.webp" srcset="/portfolio/_assets/creativa-hackathon.CqWcfR3x_ZSjo9f.webp 480w" alt sizes="380px" data-preview-img="true" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="1288" height="663"><img src="/portfolio/_assets/cocafe-working-coffee-lovers.xRgdLdsB_1YGODg.webp" srcset="/portfolio/_assets/cocafe-working-coffee-lovers.xRgdLdsB_Z2dTuDH.webp 480w" alt sizes="380px" data-preview-img="true" data-astro-cid-5bpsg6b4="true" loading="lazy" decoding="async" width="578" height="934"></div></div><p class="more" data-reveal data-astro-cid-lcdefpme><a class="btn" href="/portfolio/work" data-astro-cid-lcdefpme>See all work</a></p></section><section class="section how wrap" id="how" aria-labelledby="how-title" data-astro-cid-ragtcizh><h2 id="how-title" data-reveal-lines="true" class="giant"><span class="line"><span>How I</span></span><span class="line"><span>work</span></span></h2><p class="how__intro" data-reveal data-astro-cid-ragtcizh>One cycle, start to end. I can own all of it, or plug into the part you need.</p><div class="how__strip" data-reveal data-astro-cid-ragtcizh><ul class="stages stages--md" data-stages aria-label="The six stages of the marketing cycle" data-astro-cid-x3t7qvpz><li class="stage is-lit" data-astro-cid-x3t7qvpz><span class="stage__fill" aria-hidden="true" data-astro-cid-x3t7qvpz></span><span class="stage__label" data-astro-cid-x3t7qvpz>Research &amp; Analysis</span></li><li class="stage is-lit" data-astro-cid-x3t7qvpz><span class="stage__fill" aria-hidden="true" data-astro-cid-x3t7qvpz></span><span class="stage__label" data-astro-cid-x3t7qvpz>Positioning &amp; Pricing</span></li><li class="stage is-lit" data-astro-cid-x3t7qvpz><span class="stage__fill" aria-hidden="true" data-astro-cid-x3t7qvpz></span><span class="stage__label" data-astro-cid-x3t7qvpz>Content Strategy</span></li><li class="stage is-lit" data-astro-cid-x3t7qvpz><span class="stage__fill" aria-hidden="true" data-astro-cid-x3t7qvpz></span><span class="stage__label" data-astro-cid-x3t7qvpz>Media Buying</span></li><li class="stage is-lit" data-astro-cid-x3t7qvpz><span class="stage__fill" aria-hidden="true" data-astro-cid-x3t7qvpz></span><span class="stage__label" data-astro-cid-x3t7qvpz>Analysis &amp; Scaling</span></li><li class="stage is-lit" data-astro-cid-x3t7qvpz><span class="stage__fill" aria-hidden="true" data-astro-cid-x3t7qvpz></span><span class="stage__label" data-astro-cid-x3t7qvpz>Client &amp; Team</span></li></ul></div><ol class="how__grid" data-reveal-group data-astro-cid-ragtcizh><li class="how__item" data-reveal data-astro-cid-ragtcizh><span class="how__n num" data-astro-cid-ragtcizh>01</span><h3 class="how__name" data-astro-cid-ragtcizh>Research &amp; Analysis</h3><p class="how__text" data-astro-cid-ragtcizh>Market, audience and competitor research before any plan.</p></li><li class="how__item" data-reveal data-astro-cid-ragtcizh><span class="how__n num" data-astro-cid-ragtcizh>02</span><h3 class="how__name" data-astro-cid-ragtcizh>Positioning &amp; Pricing</h3><p class="how__text" data-astro-cid-ragtcizh>What we say, to whom, and at what price.</p></li><li class="how__item" data-reveal data-astro-cid-ragtcizh><span class="how__n num" data-astro-cid-ragtcizh>03</span><h3 class="how__name" data-astro-cid-ragtcizh>Content Strategy</h3><p class="how__text" data-astro-cid-ragtcizh>Content pillars, angles, plans and calendars.</p></li><li class="how__item" data-reveal data-astro-cid-ragtcizh><span class="how__n num" data-astro-cid-ragtcizh>04</span><h3 class="how__name" data-astro-cid-ragtcizh>Media Buying</h3><p class="how__text" data-astro-cid-ragtcizh>Media plans and full-funnel Meta campaigns.</p></li><li class="how__item" data-reveal data-astro-cid-ragtcizh><span class="how__n num" data-astro-cid-ragtcizh>05</span><h3 class="how__name" data-astro-cid-ragtcizh>Analysis &amp; Scaling</h3><p class="how__text" data-astro-cid-ragtcizh>Read the dashboards, cut what doesn&#39;t work, scale what does.</p></li><li class="how__item" data-reveal data-astro-cid-ragtcizh><span class="how__n num" data-astro-cid-ragtcizh>06</span><h3 class="how__name" data-astro-cid-ragtcizh>Client &amp; Team</h3><p class="how__text" data-astro-cid-ragtcizh>A clear brief in, clear tasks out. Fewer edits, faster delivery.</p></li></ol><p class="how__loop muted" data-reveal data-astro-cid-ragtcizh>Then the numbers feed the next round of research.</p></section><section class="section exp wrap" id="experience" aria-labelledby="exp-title" data-astro-cid-bl6cniha><h2 id="exp-title" data-reveal-lines="true" class="giant"><span class="line"><span>Experience</span></span></h2><div class="exp__tracks" data-astro-cid-bl6cniha><div class="exp__track" data-astro-cid-bl6cniha><h3 class="exp__title" data-reveal data-astro-cid-bl6cniha>Full-time</h3><div class="exp__list" data-astro-cid-bl6cniha><span class="exp__line" aria-hidden="true" data-astro-cid-bl6cniha><span data-draw data-astro-cid-bl6cniha></span></span><ol data-reveal-group data-astro-cid-bl6cniha><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/ali-alkhajeh" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Jan 2026 – Present</span><span class="exp__role" data-astro-cid-bl6cniha>Senior Social Media Specialist → Marketing Coordinator</span><span class="exp__company" data-astro-cid-bl6cniha>Ali Alkhajeh Marketing</span></a></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/e-spaces" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Jul 2024 – Jan 2026</span><span class="exp__role" data-astro-cid-bl6cniha>Social Media Manager</span><span class="exp__company" data-astro-cid-bl6cniha>E-Spaces &amp; CoCafe</span><span class="exp__note" data-astro-cid-bl6cniha>Including the Creativa Hub Zagazig project</span></a></li><li class="exp__item is-quiet" data-reveal data-astro-cid-bl6cniha><div class="exp__card" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Sep 2023 – Jul 2024</span><span class="exp__role" data-astro-cid-bl6cniha>Military service</span></div></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/e-spaces" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>2022 – Sep 2023</span><span class="exp__role" data-astro-cid-bl6cniha>Social Media Specialist</span><span class="exp__company" data-astro-cid-bl6cniha>E-Spaces</span></a></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/xiaomi-poco" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>2020 – Feb 2025</span><span class="exp__role" data-astro-cid-bl6cniha>Intern → Junior Social Media Specialist &amp; Community Manager → Social Media Specialist</span><span class="exp__company" data-astro-cid-bl6cniha>Xiaomi Egypt &amp; POCO Egypt</span><span class="pill pill--muted exp__type" data-astro-cid-bl6cniha>Remote</span></a></li></ol></div></div><div class="exp__track" data-astro-cid-bl6cniha><h3 class="exp__title" data-reveal data-astro-cid-bl6cniha>Freelance &amp; part-time</h3><div class="exp__list" data-astro-cid-bl6cniha><span class="exp__line" aria-hidden="true" data-astro-cid-bl6cniha><span data-draw data-astro-cid-bl6cniha></span></span><ol data-reveal-group data-astro-cid-bl6cniha><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/mec-academy" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>May 2026 – Dec 2026</span><span class="exp__role" data-astro-cid-bl6cniha>Media Buyer</span><span class="exp__company" data-astro-cid-bl6cniha>MEC Academy</span><span class="pill pill--muted exp__type" data-astro-cid-bl6cniha>Part-time</span></a></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/big-o" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Dec 2025 – Present</span><span class="exp__role" data-astro-cid-bl6cniha>Senior Social Media Specialist</span><span class="exp__company" data-astro-cid-bl6cniha>Big O Solutions</span><span class="pill pill--muted exp__type" data-astro-cid-bl6cniha>Freelance</span></a></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/b2b-tech-content" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Sep 2024 – Feb 2025</span><span class="exp__role" data-astro-cid-bl6cniha>Social Media Specialist</span><span class="exp__company" data-astro-cid-bl6cniha>Space Minders Software</span><span class="pill pill--muted exp__type" data-astro-cid-bl6cniha>Freelance</span></a></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><a class="exp__card" href="/portfolio/work/b2b-tech-content" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Jul 2024</span><span class="exp__role" data-astro-cid-bl6cniha>Product Content Creator</span><span class="exp__company" data-astro-cid-bl6cniha>AppLogica Middle East</span><span class="pill pill--muted exp__type" data-astro-cid-bl6cniha>Freelance</span></a></li><li class="exp__item" data-reveal data-astro-cid-bl6cniha><div class="exp__card" data-astro-cid-bl6cniha="true"><span class="exp__dates" data-astro-cid-bl6cniha>Feb 2023 – Aug 2023</span><span class="exp__role" data-astro-cid-bl6cniha>Content Creator</span><span class="exp__company" data-astro-cid-bl6cniha>Learn It</span><span class="exp__note" data-astro-cid-bl6cniha>Content for programming and networking courses</span><span class="pill pill--muted exp__type" data-astro-cid-bl6cniha>Part-time</span></div></li></ol></div></div></div><p class="exp__edu" data-reveal data-astro-cid-bl6cniha>Cairo University · Faculty of Commerce, Marketing &amp; Business Administration</p></section><section class="section about wrap" id="about" aria-labelledby="about-title" data-astro-cid-oxgmilyn><div class="about__img" data-reveal data-astro-cid-oxgmilyn><img src="/portfolio/_assets/portrait-4x5.BjH0d_08_yShml.webp" srcset="/portfolio/_assets/portrait-4x5.BjH0d_08_Z2tuA7A.webp 400w, /portfolio/_assets/portrait-4x5.BjH0d_08_yShml.webp 704w" alt="Mahmoud Ramadan smiling, black and white portrait" sizes="(max-width: 860px) 60vw, 30vw" data-astro-cid-oxgmilyn="true" loading="lazy" decoding="async" width="704" height="880"></div><div class="about__text" data-reveal-group data-astro-cid-oxgmilyn><h2 class="about__title" id="about-title" data-reveal data-astro-cid-oxgmilyn>About</h2><p data-reveal data-astro-cid-oxgmilyn>I started in tech: 3 years at the Faculty of Computers &amp; AI, Cairo University. Then I moved to Commerce to study marketing.</p><p data-reveal data-astro-cid-oxgmilyn>That mix still shapes how I work. I can talk to tech people, and I can sell to everyone else.</p><p data-reveal data-astro-cid-oxgmilyn>I started as a student intern at Xiaomi. Today I plan and run full marketing cycles for academies, agencies and B2B brands in Egypt and the UAE.</p></div></section><section class="section brands" aria-labelledby="brands-title" data-astro-cid-sjvofkio><h2 class="brands__title wrap" id="brands-title" data-reveal data-astro-cid-sjvofkio>Brands I've worked with</h2><div class="brands__viewport" data-reveal data-astro-cid-sjvofkio><ul class="brands__track" data-astro-cid-sjvofkio><li data-astro-cid-sjvofkio><a href="https://www.facebook.com/XiaomiEgypt" target="_blank" rel="noopener" title="Xiaomi Egypt" data-astro-cid-sjvofkio><img src="/portfolio/_assets/xiaomi.BBAY_7hM_Z1HRUz8.webp" alt="Xiaomi Egypt" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="96" height="96" class="brands__logo brands__logo--shape"></a></li><li data-astro-cid-sjvofkio><span title="POCO" data-astro-cid-sjvofkio><img src="/portfolio/_assets/poco.CvwPornm_10X8RW.webp" alt="POCO" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="299" height="96" class="brands__logo"></span></li><li data-astro-cid-sjvofkio><a href="https://www.facebook.com/espaces.eg" target="_blank" rel="noopener" title="E-Spaces" data-astro-cid-sjvofkio><img src="/portfolio/_assets/e-spaces.Vxu5rt1G_1P5njf.webp" alt="E-Spaces" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="289" height="96" class="brands__logo"></a></li><li data-astro-cid-sjvofkio><a href="https://www.facebook.com/profile.php?id=61585976124025" target="_blank" rel="noopener" title="CoCafe" data-astro-cid-sjvofkio><img src="/portfolio/_assets/cocafe.C1upBJLD_Z1WJk7q.webp" alt="CoCafe" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="81" height="96" class="brands__logo"></a></li><li data-astro-cid-sjvofkio><a href="https://www.facebook.com/profile.php?id=61565826658164" target="_blank" rel="noopener" title="Creativa" data-astro-cid-sjvofkio><img src="/portfolio/_assets/creativa.BDgkzbF7_tAxIH.webp" alt="Creativa" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="91" height="96" class="brands__logo"></a></li><li data-astro-cid-sjvofkio><a href="https://www.facebook.com/mecacademyegy" target="_blank" rel="noopener" title="MEC Academy" data-astro-cid-sjvofkio><img src="/portfolio/_assets/mec-academy.DWY0loFx_2gOFz4.webp" alt="MEC Academy" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="214" height="96" class="brands__logo"></a></li><li data-astro-cid-sjvofkio><span title="AppLogica" data-astro-cid-sjvofkio><img src="/portfolio/_assets/applogica.BjXIxobG_25lNdU.webp" alt="AppLogica" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="415" height="96" class="brands__logo"></span></li><li data-astro-cid-sjvofkio><span title="Ali Alkhajeh Marketing" data-astro-cid-sjvofkio><img src="/portfolio/_assets/ali-alkhajeh-marketing.jwoqkOZY_1QHPwN.webp" alt="Ali Alkhajeh Marketing" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="198" height="96" class="brands__logo"></span></li><li data-astro-cid-sjvofkio><a href="https://www.instagram.com/yanarestaurants/" target="_blank" rel="noopener" title="YANA" data-astro-cid-sjvofkio><img src="/portfolio/_assets/yana.DlWHuu7d_ZttU13.webp" alt="YANA" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="201" height="96" class="brands__logo"></a></li><li data-astro-cid-sjvofkio><a href="https://www.instagram.com/fatimalhammadi_interior/" target="_blank" rel="noopener" title="Fatima Alhammadi" data-astro-cid-sjvofkio><img src="/portfolio/_assets/fatima-alhammadi.DGpmgpE2_ZIg6yp.webp" alt="Fatima Alhammadi" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="117" height="96" class="brands__logo"></a></li><li data-astro-cid-sjvofkio><a href="https://www.instagram.com/bymai.ae/" target="_blank" rel="noopener" title="MAI Boutique" data-astro-cid-sjvofkio><img src="/portfolio/_assets/mai-boutique.C-c6Izu5_1twJGC.webp" alt="MAI Boutique" data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="187" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.facebook.com/XiaomiEgypt" target="_blank" rel="noopener" tabindex="-1" title="Xiaomi Egypt" data-astro-cid-sjvofkio><img src="/portfolio/_assets/xiaomi.BBAY_7hM_Z1HRUz8.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="96" height="96" class="brands__logo brands__logo--shape"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><span title="POCO" data-astro-cid-sjvofkio><img src="/portfolio/_assets/poco.CvwPornm_10X8RW.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="299" height="96" class="brands__logo"></span></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.facebook.com/espaces.eg" target="_blank" rel="noopener" tabindex="-1" title="E-Spaces" data-astro-cid-sjvofkio><img src="/portfolio/_assets/e-spaces.Vxu5rt1G_1P5njf.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="289" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.facebook.com/profile.php?id=61585976124025" target="_blank" rel="noopener" tabindex="-1" title="CoCafe" data-astro-cid-sjvofkio><img src="/portfolio/_assets/cocafe.C1upBJLD_Z1WJk7q.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="81" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.facebook.com/profile.php?id=61565826658164" target="_blank" rel="noopener" tabindex="-1" title="Creativa" data-astro-cid-sjvofkio><img src="/portfolio/_assets/creativa.BDgkzbF7_tAxIH.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="91" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.facebook.com/mecacademyegy" target="_blank" rel="noopener" tabindex="-1" title="MEC Academy" data-astro-cid-sjvofkio><img src="/portfolio/_assets/mec-academy.DWY0loFx_2gOFz4.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="214" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><span title="AppLogica" data-astro-cid-sjvofkio><img src="/portfolio/_assets/applogica.BjXIxobG_25lNdU.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="415" height="96" class="brands__logo"></span></li><li aria-hidden="true" data-astro-cid-sjvofkio><span title="Ali Alkhajeh Marketing" data-astro-cid-sjvofkio><img src="/portfolio/_assets/ali-alkhajeh-marketing.jwoqkOZY_1QHPwN.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="198" height="96" class="brands__logo"></span></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.instagram.com/yanarestaurants/" target="_blank" rel="noopener" tabindex="-1" title="YANA" data-astro-cid-sjvofkio><img src="/portfolio/_assets/yana.DlWHuu7d_ZttU13.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="201" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.instagram.com/fatimalhammadi_interior/" target="_blank" rel="noopener" tabindex="-1" title="Fatima Alhammadi" data-astro-cid-sjvofkio><img src="/portfolio/_assets/fatima-alhammadi.DGpmgpE2_ZIg6yp.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="117" height="96" class="brands__logo"></a></li><li aria-hidden="true" data-astro-cid-sjvofkio><a href="https://www.instagram.com/bymai.ae/" target="_blank" rel="noopener" tabindex="-1" title="MAI Boutique" data-astro-cid-sjvofkio><img src="/portfolio/_assets/mai-boutique.C-c6Izu5_1twJGC.webp" alt data-astro-cid-sjvofkio="true" loading="lazy" decoding="async" width="187" height="96" class="brands__logo"></a></li></ul></div></section><section class="section contact wrap" id="contact" aria-labelledby="contact-title" data-astro-cid-he3spzz3><h2 id="contact-title" data-reveal-lines="true" class="giant"><span class="line"><span>Let&#39;s</span></span><span class="line"><span>talk</span></span></h2><div class="contact__grid" data-reveal-group data-astro-cid-he3spzz3><p class="contact__lead" data-reveal data-astro-cid-he3spzz3>Hiring for a marketing role? I'd like to hear about it.</p><a class="contact__email" href="mailto:mahmodrf25@gmail.com" data-reveal data-astro-cid-he3spzz3>mahmodrf25@gmail.com</a><ul class="contact__links" data-reveal data-astro-cid-he3spzz3><li data-astro-cid-he3spzz3><a class="btn btn--primary" href="https://wa.me/201124941148" target="_blank" rel="noopener" data-astro-cid-he3spzz3>WhatsApp +20 11 249 41 148</a></li><li data-astro-cid-he3spzz3><a class="btn" href="https://www.linkedin.com/in/mahmod-ramdan-82a83331b/" target="_blank" rel="noopener" data-astro-cid-he3spzz3>LinkedIn</a></li></ul></div></section></main><footer class="foot wrap" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk>© 2026 Mahmoud Ramadan</p><p class="muted" data-astro-cid-jo6i4kqk>Giza, Egypt</p></footer><script type="module" src="/portfolio/_assets/Base.astro_astro_type_script_index_0_lang.CSeSmUjD.js"></script></body></html>
