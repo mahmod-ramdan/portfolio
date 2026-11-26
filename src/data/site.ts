@@ -20,7 +20,7 @@ export const person = {
   email: 'mahmodrf25@gmail.com',
   phone: '+20 11 249 41 148',
   whatsapp: 'https://wa.me/201124941148',
-  linkedin: 'https://www.linkedin.com/in/mahmod-ramdan-82a83331b/',
+  linkedin: 'https://www.linkedin.com/in/mahmod-ramdan/',
   location: 'Giza, Egypt',
   cv: { file: 'Mahmoud_Ramadan_CV.pdf', ready: true },
   about: [

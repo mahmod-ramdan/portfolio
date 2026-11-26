@@ -226,7 +226,7 @@ Turn off Lenis, parallax, count-ups (show final numbers), the marquee (static gr
 9. **Contact:** a giant "LET'S TALK" title. Email, WhatsApp, LinkedIn, Download CV.
    - Email: `mahmodrf25@gmail.com`
    - Phone/WhatsApp: `+20 11 249 41 148` → `https://wa.me/201124941148`
-   - LinkedIn: `https://www.linkedin.com/in/mahmod-ramdan-82a83331b/`
+   - LinkedIn: `https://www.linkedin.com/in/mahmod-ramdan/`
    - Location: Giza, Egypt
 
 ---
